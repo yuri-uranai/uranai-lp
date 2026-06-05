@@ -1,0 +1,686 @@
+<!DOCTYPE html>
+<html lang="ja">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>売れるチャット占い実践講座 | Yuri</title>
+<link href="https://fonts.googleapis.com/css2?family=Noto+Serif+JP:wght@300;400;500;600&family=Shippori+Mincho:wght@400;500;600&family=Noto+Sans+JP:wght@300;400;500&display=swap" rel="stylesheet">
+<style>
+  :root {
+    --ivory:        #faf8f4;
+    --cream:        #f5f0e8;
+    --warm-white:   #fffef9;
+    --gold:         #b8922c;
+    --gold-light:   #c9a96e;
+    --gold-pale:    #ecdec4;
+    --sage:         #6b9e8a;
+    --sage-light:   #9dc0b0;
+    --sage-pale:    #ddeee6;
+    --border:       #e2d9cc;
+    --border-light: #ede8e0;
+    --text-main:    #322e2a;
+    --text-sub:     #5a5048;
+    --text-muted:   #998c80;
+  }
+  * { margin: 0; padding: 0; box-sizing: border-box; }
+  body {
+    font-family: "Noto Sans JP", sans-serif;
+    background: var(--ivory);
+    color: var(--text-main);
+    font-size: 14px;
+    line-height: 1.85;
+    -webkit-font-smoothing: antialiased;
+    max-width: 640px;
+    margin: 0 auto;
+  }
+
+  /* ─── ヘッダー ─── */
+  .site-header {
+    background: var(--warm-white);
+    border-bottom: 1px solid var(--border-light);
+    padding: 16px 24px;
+    display: flex; align-items: center; justify-content: center; gap: 10px;
+  }
+  .header-line { flex: 1; height: 1px; background: var(--border-light); }
+  .header-text {
+    font-family: "Noto Serif JP", serif;
+    font-size: 10px; letter-spacing: 0.25em; color: var(--text-muted); white-space: nowrap;
+  }
+
+  /* ─── 共通 ─── */
+  section { padding: 56px 24px; }
+  .sec-eyebrow {
+    font-family: "Noto Serif JP", serif;
+    font-size: 9.5px; letter-spacing: 0.35em; color: var(--gold);
+    text-align: center; display: block; margin-bottom: 10px;
+  }
+  .sec-title {
+    font-family: "Shippori Mincho", serif;
+    font-size: 22px; font-weight: 600; line-height: 1.6; text-align: center; color: var(--text-main);
+  }
+  .sec-rule { width: 36px; height: 1px; background: var(--gold-light); margin: 16px auto 28px; }
+  .sec-lead { font-size: 13px; color: var(--text-sub); text-align: center; line-height: 2; }
+
+  /* ─── CTAカード（共通） ─── */
+  .cta-card {
+    background: var(--warm-white);
+    border: 1px solid var(--border);
+    border-radius: 14px;
+    padding: 24px 22px;
+    text-align: center;
+  }
+  .cta-card-label {
+    font-family: "Noto Serif JP", serif;
+    font-size: 12px; color: var(--text-muted); letter-spacing: 0.1em; margin-bottom: 14px;
+  }
+  .cta-keyword-box {
+    display: inline-block;
+    background: var(--sage-pale);
+    border: 1px solid var(--sage-light);
+    color: var(--sage);
+    font-family: "Shippori Mincho", serif;
+    font-size: 18px; font-weight: 600;
+    letter-spacing: 0.1em;
+    padding: 10px 28px;
+    border-radius: 8px;
+    margin: 10px 0 14px;
+  }
+  .cta-card-desc {
+    font-size: 12.5px; color: var(--text-sub); line-height: 1.9;
+  }
+
+  .hero-visual {
+    width: 100%; max-height: 340px;
+    position: relative; overflow: hidden; margin-bottom: 36px;
+  }
+  .hero-visual img {
+    width: 100%; height: 100%; object-fit: cover; object-position: center top; display: block;
+  }
+  .hero-visual-overlay {
+    position: absolute; bottom: 0; left: 0; right: 0; height: 100px;
+    background: linear-gradient(transparent, #fdf9f2);
+  }
+  /* ════ 1. ファーストビュー ════ */
+  .hero {
+    background: linear-gradient(165deg, #fdf9f2 0%, #f6efe2 70%, #ede4d3 100%);
+    padding: 0 0 52px;
+    position: relative; overflow: hidden;
+  }
+  .hero::after {
+    content: ""; position: absolute; bottom: -80px; right: -80px;
+    width: 280px; height: 280px; border-radius: 50%;
+    background: radial-gradient(circle, rgba(201,169,110,0.07) 0%, transparent 70%);
+    pointer-events: none;
+  }
+  .hero-body { padding: 0 24px; }
+  .hero-tag {
+    display: inline-flex; align-items: center; gap: 6px;
+    background: var(--sage-pale); color: var(--sage);
+    font-family: "Noto Serif JP", serif; font-size: 10px; letter-spacing: 0.2em;
+    padding: 6px 14px; border-radius: 20px; margin-bottom: 24px;
+  }
+  .tag-dot { width: 5px; height: 5px; background: var(--sage); border-radius: 50%; }
+  .hero-question {
+    font-family: "Noto Serif JP", serif; font-size: 13.5px;
+    color: var(--text-sub); line-height: 2.1; margin-bottom: 6px;
+  }
+  .hero-question .ul { border-bottom: 1.5px solid var(--gold-light); padding-bottom: 1px; }
+  .hero-divider { display: flex; align-items: center; gap: 10px; margin: 22px 0; }
+  .hdl { flex: 1; height: 1px; background: var(--border); }
+  .hdd { width: 6px; height: 6px; background: var(--gold-light); transform: rotate(45deg); }
+  .hero-title {
+    font-family: "Shippori Mincho", serif; font-size: 30px; font-weight: 600;
+    line-height: 1.45; color: var(--text-main); letter-spacing: 0.04em; margin-bottom: 12px;
+  }
+  .hero-title em { font-style: normal; color: var(--gold); }
+  .hero-subtitle {
+    font-family: "Noto Serif JP", serif; font-size: 13px;
+    color: var(--text-sub); line-height: 2; margin-bottom: 24px;
+  }
+  .hero-accompany {
+    background: white; border: 1px solid var(--border); border-left: 3px solid var(--sage);
+    border-radius: 0 10px 10px 0; padding: 16px 18px; margin-bottom: 22px;
+    display: flex; align-items: flex-start; gap: 14px;
+  }
+  .hero-accompany svg {
+    width: 22px; height: 22px; stroke: var(--sage); fill: none;
+    stroke-width: 1.5; stroke-linecap: round; stroke-linejoin: round;
+    flex-shrink: 0; margin-top: 2px;
+  }
+  .hero-accompany p { font-family: "Noto Serif JP", serif; font-size: 13px; color: var(--text-main); line-height: 1.9; }
+  .hero-accompany strong { color: var(--sage); }
+  .hero-notice {
+    background: #fdf8f0; border: 1px solid var(--gold-pale); border-radius: 10px;
+    padding: 16px 18px; margin-bottom: 28px;
+  }
+  .hero-notice p { font-size: 12.5px; color: var(--text-sub); line-height: 1.95; }
+  .hero-notice strong { color: var(--text-main); }
+  .hero-badges { display: flex; flex-wrap: wrap; gap: 8px; margin-bottom: 30px; }
+  .badge {
+    display: inline-flex; align-items: center; gap: 5px;
+    background: white; border: 1px solid var(--border); color: var(--text-sub);
+    font-family: "Noto Serif JP", serif; font-size: 11px; letter-spacing: 0.05em;
+    padding: 6px 13px; border-radius: 20px;
+  }
+  .bdot { width: 4px; height: 4px; background: var(--sage-light); border-radius: 50%; }
+
+  /* ヒーロー用CTAカード（軽め） */
+  .hero-cta {
+    background: var(--warm-white); border: 1px solid var(--border);
+    border-radius: 14px; padding: 20px 20px; text-align: center;
+  }
+  .hero-cta p { font-size: 12.5px; color: var(--text-sub); line-height: 1.9; margin-bottom: 10px; }
+  .hero-cta .kw {
+    display: inline-block; background: var(--sage-pale);
+    border: 1px solid var(--sage-light); color: var(--sage);
+    font-family: "Shippori Mincho", serif; font-size: 16px; font-weight: 600;
+    letter-spacing: 0.1em; padding: 8px 24px; border-radius: 7px; margin: 6px 0 10px;
+  }
+  .hero-cta small { font-size: 11px; color: var(--text-muted); }
+
+  /* ════ 2. 収入イメージ ════ */
+  .income-section { background: var(--warm-white); }
+  .income-grid { display: grid; grid-template-columns: 1fr 1fr; gap: 14px; margin: 28px 0 14px; }
+  .income-card { border-radius: 16px; padding: 26px 16px 22px; text-align: center; }
+  .income-card.main-job { background: linear-gradient(160deg, #eef8f3 0%, #daeee5 100%); border: 1px solid var(--sage-light); }
+  .income-card.side-job { background: linear-gradient(160deg, #fdf7ee 0%, #f4e8d0 100%); border: 1px solid var(--gold-pale); }
+  .income-icon-wrap {
+    width: 48px; height: 48px; border-radius: 50%; margin: 0 auto 14px;
+    display: flex; align-items: center; justify-content: center;
+  }
+  .main-job .income-icon-wrap { background: rgba(107,158,138,0.12); }
+  .side-job .income-icon-wrap { background: rgba(201,169,110,0.12); }
+  .income-icon-wrap svg { width: 22px; height: 22px; fill: none; stroke-width: 1.5; stroke-linecap: round; stroke-linejoin: round; }
+  .main-job .income-icon-wrap svg { stroke: var(--sage); }
+  .side-job .income-icon-wrap svg { stroke: var(--gold-light); }
+  .income-type { font-family: "Noto Serif JP", serif; font-size: 9.5px; letter-spacing: 0.2em; color: var(--text-muted); display: block; margin-bottom: 5px; }
+  .income-label { font-family: "Noto Serif JP", serif; font-size: 12px; color: var(--text-sub); margin-bottom: 12px; }
+  .income-amount { font-family: "Shippori Mincho", serif; font-weight: 600; font-size: 19px; line-height: 1.4; }
+  .main-job .income-amount { color: var(--sage); }
+  .side-job .income-amount { color: var(--gold); }
+  .income-unit { display: block; font-family: "Noto Serif JP", serif; font-size: 10px; color: var(--text-muted); margin-top: 4px; }
+  .income-note { font-size: 10.5px; color: var(--text-muted); line-height: 1.85; border-top: 1px solid var(--border-light); padding-top: 14px; }
+
+  /* ════ 3. なぜ売れない ════ */
+  .why-section { background: var(--ivory); }
+  .why-item { display: flex; align-items: flex-start; gap: 16px; padding: 20px 0; border-bottom: 1px solid var(--border-light); }
+  .why-item:last-of-type { border-bottom: none; }
+  .icon-wrap {
+    width: 44px; height: 44px; border-radius: 50%; background: var(--sage-pale);
+    display: flex; align-items: center; justify-content: center; flex-shrink: 0;
+  }
+  .icon-wrap svg { width: 20px; height: 20px; stroke: var(--sage); fill: none; stroke-width: 1.5; stroke-linecap: round; stroke-linejoin: round; }
+  .why-item-text strong { display: block; font-family: "Noto Serif JP", serif; font-size: 13.5px; font-weight: 500; color: var(--text-main); margin-bottom: 5px; }
+  .why-item-text p { font-size: 12.5px; color: var(--text-sub); line-height: 1.85; }
+  .why-conclusion {
+    background: linear-gradient(135deg, #eef8f3 0%, #daeee5 100%);
+    border: 1px solid var(--sage-light); border-radius: 12px;
+    padding: 22px 20px; margin-top: 28px; text-align: center;
+  }
+  .why-conclusion p { font-family: "Noto Serif JP", serif; font-size: 13.5px; color: var(--sage); line-height: 2; }
+
+  /* ════ 4. AI時代 ════ */
+  .ai-section { background: linear-gradient(165deg, #f5f0e8 0%, #ece4d6 100%); }
+  .ai-lead {
+    background: white; border: 1px solid var(--border); border-left: 3px solid var(--gold-light);
+    border-radius: 0 12px 12px 0; padding: 20px 18px; margin-bottom: 24px;
+  }
+  .ai-lead p { font-family: "Noto Serif JP", serif; font-size: 13px; color: var(--text-sub); line-height: 2; }
+  .ai-lead strong { color: var(--gold); }
+  .ai-cols { display: grid; grid-template-columns: 1fr 1fr; gap: 12px; margin-bottom: 22px; }
+  .ai-col { border-radius: 14px; padding: 20px 14px 18px; }
+  .col-ai { background: white; border: 1px solid var(--border); }
+  .col-human { background: linear-gradient(160deg, var(--sage) 0%, #4e7a6a 100%); }
+  .ai-col-head {
+    font-family: "Noto Serif JP", serif; font-size: 10px; letter-spacing: 0.15em;
+    text-align: center; display: block; padding-bottom: 10px; margin-bottom: 12px;
+    border-bottom: 1px solid var(--border-light);
+  }
+  .col-ai .ai-col-head { color: var(--text-muted); }
+  .col-human .ai-col-head { color: rgba(255,255,255,0.75); border-color: rgba(255,255,255,0.2); }
+  .ai-col ul { list-style: none; display: flex; flex-direction: column; gap: 8px; }
+  .ai-col ul li { display: flex; align-items: flex-start; gap: 7px; font-size: 11.5px; line-height: 1.65; }
+  .col-ai li { color: var(--text-sub); }
+  .col-human li { color: rgba(255,255,255,0.92); }
+  .ai-check { width: 14px; height: 14px; flex-shrink: 0; margin-top: 2px; fill: none; stroke-width: 2; stroke-linecap: round; stroke-linejoin: round; }
+  .col-ai .ai-check { stroke: var(--sage-light); }
+  .col-human .ai-check { stroke: rgba(255,255,255,0.6); }
+  .ai-message { background: white; border: 1px solid var(--border); border-radius: 12px; padding: 20px 18px; }
+  .ai-message p { font-size: 12.5px; color: var(--text-sub); line-height: 2; }
+  .ai-message strong { color: var(--text-main); }
+
+  /* ════ 5. 講座の特長 ════ */
+  .features-section { background: var(--warm-white); }
+  .features-grid { display: grid; grid-template-columns: 1fr 1fr; gap: 12px; }
+  .feat-card { background: var(--ivory); border: 1px solid var(--border-light); border-radius: 14px; padding: 22px 16px 20px; text-align: center; }
+  .feat-card.wide {
+    grid-column: 1 / -1; background: linear-gradient(160deg, #eef8f3 0%, #daeee5 100%);
+    border-color: var(--sage-light); text-align: left; display: flex; align-items: flex-start; gap: 16px; padding: 22px 20px;
+  }
+  .feat-icon { width: 44px; height: 44px; border-radius: 50%; background: var(--sage-pale); display: flex; align-items: center; justify-content: center; flex-shrink: 0; margin: 0 auto 12px; }
+  .feat-card.wide .feat-icon { margin: 0; }
+  .feat-icon svg { width: 20px; height: 20px; stroke: var(--sage); fill: none; stroke-width: 1.5; stroke-linecap: round; stroke-linejoin: round; }
+  .feat-icon-gold { background: #fdf4e3; }
+  .feat-icon-gold svg { stroke: var(--gold-light); }
+  .feat-title { font-family: "Noto Serif JP", serif; font-size: 12.5px; font-weight: 500; color: var(--text-main); margin-bottom: 6px; line-height: 1.6; }
+  .feat-desc { font-size: 11.5px; color: var(--text-sub); line-height: 1.8; }
+
+  /* ════ NEW: 講座で扱う主な内容 ════ */
+  .curriculum-section { background: var(--ivory); }
+  .curriculum-grid { display: flex; flex-direction: column; gap: 10px; margin-top: 4px; }
+  .curriculum-item {
+    display: flex; align-items: flex-start; gap: 14px;
+    background: white; border: 1px solid var(--border-light); border-radius: 12px; padding: 16px 18px;
+  }
+  .curriculum-num {
+    font-family: "Shippori Mincho", serif; font-size: 13px; font-weight: 600;
+    color: var(--sage-light); flex-shrink: 0; width: 22px; text-align: center; margin-top: 1px;
+  }
+  .curriculum-item p { font-family: "Noto Serif JP", serif; font-size: 13px; color: var(--text-sub); line-height: 1.75; }
+  .curriculum-item p strong { color: var(--text-main); font-weight: 500; display: block; margin-bottom: 2px; }
+  .curriculum-note {
+    background: #fdf8f0; border: 1px solid var(--gold-pale); border-radius: 10px;
+    padding: 14px 16px; margin-top: 20px;
+  }
+  .curriculum-note p { font-size: 11.5px; color: var(--text-sub); line-height: 1.9; }
+
+  /* ════ 6. こんな方に ════ */
+  .target-section { background: linear-gradient(165deg, #faf6ee 0%, #f2ebe0 100%); }
+  .target-list { list-style: none; display: flex; flex-direction: column; gap: 10px; }
+  .target-list li {
+    display: flex; align-items: flex-start; gap: 12px;
+    padding: 16px 18px; background: white; border: 1px solid var(--border-light);
+    border-radius: 12px; font-size: 13px; color: var(--text-sub); line-height: 1.75;
+  }
+  .target-list li svg { width: 16px; height: 16px; stroke: var(--sage); fill: none; stroke-width: 2; stroke-linecap: round; stroke-linejoin: round; flex-shrink: 0; margin-top: 3px; }
+
+  /* ════ 7. 講師紹介 ════ */
+  .instructor-section { background: var(--warm-white); }
+  .instructor-card { background: linear-gradient(165deg, #fdf9f2 0%, #f5edde 100%); border: 1px solid var(--gold-pale); border-radius: 20px; overflow: hidden; }
+  .instructor-photo { width: 96px; height: 96px; border-radius: 50%; overflow: hidden; position: relative; flex-shrink: 0; border: 2px solid var(--gold-pale); margin: 0; }
+  .instructor-photo img { width: 100%; height: 100%; object-fit: cover; object-position: top center; display: block; }
+  .instructor-photo-overlay { display: none; }
+  .instructor-inner { display: flex; align-items: flex-start; gap: 16px; padding: 24px 22px 20px; }
+  .instructor-meta { flex: 1; }
+  .instructor-body { padding: 0 22px 28px; }
+  .instructor-badge { display: inline-block; background: var(--sage-pale); color: var(--sage); font-family: "Noto Serif JP", serif; font-size: 9.5px; letter-spacing: 0.2em; padding: 4px 12px; border-radius: 20px; margin-bottom: 12px; }
+  .instructor-name { font-family: "Shippori Mincho", serif; font-size: 30px; font-weight: 600; letter-spacing: 0.12em; color: var(--text-main); margin-bottom: 4px; }
+  .instructor-title { font-family: "Noto Serif JP", serif; font-size: 11.5px; color: var(--text-muted); letter-spacing: 0.1em; margin-bottom: 20px; }
+  .instructor-tagline { font-family: "Noto Serif JP", serif; font-size: 13.5px; color: var(--gold); line-height: 2; padding-bottom: 18px; border-bottom: 1px solid var(--border-light); margin-bottom: 20px; }
+  .instructor-list { list-style: none; display: flex; flex-direction: column; gap: 11px; }
+  .instructor-list li { display: flex; align-items: flex-start; gap: 10px; font-size: 12.5px; color: var(--text-sub); line-height: 1.75; }
+  .instructor-list li svg { width: 14px; height: 14px; stroke: var(--gold-light); fill: none; stroke-width: 2; stroke-linecap: round; stroke-linejoin: round; flex-shrink: 0; margin-top: 3px; }
+
+  /* ════ 8. 提携 ════ */
+  .partnership-section { background: linear-gradient(165deg, #262d28 0%, #1a2420 100%); }
+  .partnership-section .sec-eyebrow { color: var(--gold-light); }
+  .partnership-section .sec-title { color: white; }
+  .partnership-section .sec-rule { background: var(--gold-light); }
+  .partnership-section .sec-lead { color: rgba(255,255,255,0.6); }
+  .partner-box { background: rgba(255,255,255,0.07); border: 1px solid rgba(201,169,110,0.25); border-radius: 16px; padding: 26px 20px; margin-bottom: 20px; }
+  .partner-box-icon { width: 52px; height: 52px; border-radius: 50%; background: rgba(201,169,110,0.12); display: flex; align-items: center; justify-content: center; margin: 0 auto 16px; }
+  .partner-box-icon svg { width: 24px; height: 24px; stroke: var(--gold-light); fill: none; stroke-width: 1.5; stroke-linecap: round; stroke-linejoin: round; }
+  .partner-box p { font-family: "Noto Serif JP", serif; font-size: 13px; color: rgba(255,255,255,0.88); line-height: 2; text-align: center; }
+  .partner-box em { font-style: normal; color: var(--gold-light); border-bottom: 1px solid rgba(201,169,110,0.4); }
+  .support-row { display: grid; grid-template-columns: repeat(3, 1fr); gap: 10px; margin-bottom: 22px; }
+  .support-item { background: rgba(255,255,255,0.05); border: 1px solid rgba(255,255,255,0.08); border-radius: 12px; padding: 18px 10px 16px; text-align: center; }
+  .support-item-icon { width: 36px; height: 36px; border-radius: 50%; background: rgba(201,169,110,0.1); display: flex; align-items: center; justify-content: center; margin: 0 auto 10px; }
+  .support-item-icon svg { width: 16px; height: 16px; stroke: var(--gold-light); fill: none; stroke-width: 1.5; stroke-linecap: round; stroke-linejoin: round; }
+  .support-item p { font-family: "Noto Serif JP", serif; font-size: 10.5px; color: rgba(255,255,255,0.65); line-height: 1.7; }
+  .partner-note { font-size: 10.5px; color: rgba(255,255,255,0.35); line-height: 1.85; text-align: center; }
+
+  /* ════ 9. 入門講座 ════ */
+  .intro-section { background: var(--cream); padding: 40px 24px; }
+  .intro-card { background: white; border: 1px solid var(--border-light); border-radius: 14px; padding: 20px 18px; display: flex; align-items: flex-start; gap: 14px; }
+  .intro-icon { width: 40px; height: 40px; border-radius: 50%; background: #fdf4e3; display: flex; align-items: center; justify-content: center; flex-shrink: 0; }
+  .intro-icon svg { width: 18px; height: 18px; stroke: var(--gold-light); fill: none; stroke-width: 1.5; stroke-linecap: round; stroke-linejoin: round; }
+  .intro-card-text p:first-child { font-family: "Noto Serif JP", serif; font-size: 13px; font-weight: 500; color: var(--text-main); margin-bottom: 6px; }
+  .intro-card-text p:last-child { font-size: 12px; color: var(--text-sub); line-height: 1.85; }
+
+  /* ════ 10. 最終CTA ════ */
+  .final-cta {
+    background: linear-gradient(165deg, #fdf9f2 0%, #f5edde 100%);
+    padding: 64px 24px 72px; text-align: center;
+  }
+  .final-cta-card {
+    background: white; border: 1.5px solid var(--border); border-radius: 16px;
+    padding: 32px 24px; margin-top: 28px;
+  }
+  .final-cta-card .label {
+    font-family: "Noto Serif JP", serif; font-size: 13px;
+    color: var(--text-sub); line-height: 1.9; margin-bottom: 14px;
+  }
+  .final-cta-card .keyword {
+    display: inline-block;
+    background: var(--sage-pale); border: 1.5px solid var(--sage-light);
+    color: var(--sage); font-family: "Shippori Mincho", serif;
+    font-size: 22px; font-weight: 600; letter-spacing: 0.1em;
+    padding: 12px 32px; border-radius: 10px; margin: 10px 0 16px;
+  }
+  .final-cta-card .desc {
+    font-size: 12.5px; color: var(--text-sub); line-height: 1.9;
+  }
+  .final-cta-card .note {
+    font-size: 11px; color: var(--text-muted); margin-top: 14px; line-height: 1.75;
+  }
+
+  footer {
+    background: var(--text-main); color: rgba(255,255,255,0.3); text-align: center;
+    padding: 28px 20px; font-family: "Noto Serif JP", serif; font-size: 10px; letter-spacing: 0.15em;
+  }
+</style>
+</head>
+<body>
+
+<header class="site-header">
+  <div class="header-line"></div>
+  <span class="header-text">売れるチャット占い実践講座 ｜ Yuri</span>
+  <div class="header-line"></div>
+</header>
+
+
+<!-- ════ 1. ファーストビュー ════ -->
+<section class="hero">
+  <div class="hero-visual">
+    <img src="hero.jpg" alt="チャット占いで活動する女性">
+    <div class="hero-visual-overlay"></div>
+  </div>
+  <div class="hero-body">
+    <div class="hero-tag"><span class="tag-dot"></span>Chat Fortune Telling Lecture</div>
+    <p class="hero-question">
+      チャット占いって、<span class="ul">稼げないと思っていませんか？</span><br>
+      相談者への対応が不安…と感じていませんか？
+    </p>
+    <div class="hero-divider"><div class="hdl"></div><div class="hdd"></div><div class="hdl"></div></div>
+    <h1 class="hero-title">売れるチャット占い<br><em>実践</em>講座</h1>
+    <p class="hero-subtitle">完全マンツーマンで、相談者に選ばれる<br>対応力を実践で身につける</p>
+    <div class="hero-accompany">
+      <svg viewBox="0 0 24 24"><path d="M17 21v-2a4 4 0 0 0-4-4H5a4 4 0 0 0-4 4v2"/><circle cx="9" cy="7" r="4"/><path d="M23 21v-2a4 4 0 0 0-3-3.87"/><path d="M16 3.13a4 4 0 0 1 0 7.75"/></svg>
+      <p>未経験からデビュー後まで、<br><strong>完全マンツーマンで伴走します。</strong></p>
+    </div>
+    <div class="hero-notice">
+      <p>チャット占いは手軽に相談ができる分、相談者の感情が文章に強く出ることもあります。<br>だからこそ、自己流ではなく、<strong>現場で選ばれる対応力を実践で身につけること</strong>が大切です。</p>
+    </div>
+    <div class="hero-badges">
+      <span class="badge"><span class="bdot"></span>個別設計</span>
+      <span class="badge"><span class="bdot"></span>模擬鑑定あり</span>
+      <span class="badge"><span class="bdot"></span>完全マンツーマン</span>
+      <span class="badge"><span class="bdot"></span>デビュー後も見据えたサポート</span>
+    </div>
+
+    <!-- ヒーロー CTA カード（軽め） -->
+    <div class="hero-cta">
+      <p>詳しく知りたい方は、このトークに戻って</p>
+      <div class="kw">「講座」</div>
+      <p>と送ってください。</p>
+      <small>今の状況に合わせて個別にご案内します</small>
+    </div>
+  </div>
+</section>
+
+
+<!-- ════ 2. 収入イメージ ════ -->
+<section class="income-section">
+  <span class="sec-eyebrow">INCOME IMAGE</span>
+  <h2 class="sec-title">チャット占いを<br>収入の柱として育てることも可能です</h2>
+  <div class="sec-rule"></div>
+  <p class="sec-lead">本業として活動することも、副業として収入の柱を増やすことも可能です。<br>活動スタイルに合わせて、自分のペースで育てていけます。</p>
+  <div class="income-grid">
+    <div class="income-card main-job">
+      <div class="income-icon-wrap">
+        <svg viewBox="0 0 24 24"><path d="M12 2L2 7l10 5 10-5-10-5z"/><path d="M2 17l10 5 10-5"/><path d="M2 12l10 5 10-5"/></svg>
+      </div>
+      <span class="income-type">FULL TIME</span>
+      <p class="income-label">本業として活動</p>
+      <div class="income-amount">月収<br><strong>30万〜100万円</strong><span class="income-unit">程度のイメージ</span></div>
+    </div>
+    <div class="income-card side-job">
+      <div class="income-icon-wrap">
+        <svg viewBox="0 0 24 24"><circle cx="12" cy="12" r="10"/><path d="M12 8v4l3 3"/></svg>
+      </div>
+      <span class="income-type">SIDE BUSINESS</span>
+      <p class="income-label">副業として活動</p>
+      <div class="income-amount">月収<br><strong>10万〜20万円</strong><span class="income-unit">程度のイメージ</span></div>
+    </div>
+  </div>
+  <p class="income-note">※過去の育成事例をもとにした収入イメージです。成果を保証するものではありません。<br>※収入は活動条件・稼働状況・所属条件・審査結果等により異なります。</p>
+</section>
+
+
+<!-- ════ 3. なぜ売れない ════ -->
+<section class="why-section">
+  <span class="sec-eyebrow">WHY YOU CAN'T STAND OUT</span>
+  <h2 class="sec-title">「占いができること」と<br>「選ばれること」は違う</h2>
+  <div class="sec-rule"></div>
+  <p class="sec-lead">占いスキルだけでは、<br>売れる占い師にはなりにくい理由があります。</p>
+  <div style="margin-top:8px">
+    <div class="why-item">
+      <div class="icon-wrap"><svg viewBox="0 0 24 24"><path d="M21 15a2 2 0 0 1-2 2H7l-4 4V5a2 2 0 0 1 2-2h14a2 2 0 0 1 2 2z"/></svg></div>
+      <div class="why-item-text"><strong>文章で「安心感」を伝える力</strong><p>声も表情も見えないチャットだからこそ、文章の一言が相談者の信頼を左右します。</p></div>
+    </div>
+    <div class="why-item">
+      <div class="icon-wrap"><svg viewBox="0 0 24 24"><circle cx="12" cy="12" r="10"/><line x1="2" y1="12" x2="22" y2="12"/><path d="M12 2a15.3 15.3 0 0 1 4 10 15.3 15.3 0 0 1-4 10 15.3 15.3 0 0 1-4-10 15.3 15.3 0 0 1 4-10z"/></svg></div>
+      <div class="why-item-text"><strong>相談者のタイプに合わせた対応力</strong><p>感情が強い方、思い込みが激しい方、長文を書く方…相談者のタイプはさまざまです。それぞれに合わせた言葉の返し方が、信頼につながります。</p></div>
+    </div>
+    <div class="why-item">
+      <div class="icon-wrap"><svg viewBox="0 0 24 24"><path d="M12 22s8-4 8-10V5l-8-3-8 3v7c0 6 8 10 8 10z"/></svg></div>
+      <div class="why-item-text"><strong>不安を煽らずに導く力</strong><p>正しい鑑定内容でも、伝え方次第で相談者の受け取り方は大きく変わります。</p></div>
+    </div>
+    <div class="why-item">
+      <div class="icon-wrap"><svg viewBox="0 0 24 24"><path d="M17 8h2a2 2 0 0 1 2 2v6a2 2 0 0 1-2 2h-2v4l-4-4H9a1.994 1.994 0 0 1-1.414-.586m0 0L11 14h4a2 2 0 0 0 2-2V6a2 2 0 0 0-2-2H5a2 2 0 0 0-2 2v6a2 2 0 0 0 2 2h2v4l.586-.586z"/></svg></div>
+      <div class="why-item-text"><strong>「またこの占い師に相談したい」と思ってもらえる対応力</strong><p>一度の鑑定で終わらず、相談者に選ばれ続けるための対応の積み重ねが、リピートと収益の安定につながります。</p></div>
+    </div>
+  </div>
+  <div class="why-conclusion"><p>だからこそ、チャット占いならではの<br><strong>現場感を実践で学ぶことが大切</strong>なのです。</p></div>
+</section>
+
+
+<!-- ════ 4. AI時代 ════ -->
+<section class="ai-section">
+  <span class="sec-eyebrow">THE VALUE OF HUMAN GUIDANCE</span>
+  <h2 class="sec-title">AIで練習できる時代だからこそ、<br>人から実践で学ぶ価値がある</h2>
+  <div class="sec-rule"></div>
+  <div class="ai-lead"><p>反復練習や添削、傾向分析はAIでも行えます。それは<strong>とても有効な練習法</strong>です。<br><br>ただ、AIで練習できる環境が整ったからこそ、<strong>「本番で選ばれる対応力」</strong>を人から実践で学ぶ価値が、より明確になっています。</p></div>
+  <div class="ai-cols">
+    <div class="ai-col col-ai">
+      <span class="ai-col-head">AIで練習できること</span>
+      <ul>
+        <li><svg class="ai-check" viewBox="0 0 14 14"><polyline points="2,7 5,10 12,3"/></svg>反復練習・確認</li>
+        <li><svg class="ai-check" viewBox="0 0 14 14"><polyline points="2,7 5,10 12,3"/></svg>表現の言い換え</li>
+        <li><svg class="ai-check" viewBox="0 0 14 14"><polyline points="2,7 5,10 12,3"/></svg>傾向・パターン分析</li>
+        <li><svg class="ai-check" viewBox="0 0 14 14"><polyline points="2,7 5,10 12,3"/></svg>基本的な添削</li>
+        <li><svg class="ai-check" viewBox="0 0 14 14"><polyline points="2,7 5,10 12,3"/></svg>簡単なフィードバック</li>
+      </ul>
+    </div>
+    <div class="ai-col col-human">
+      <span class="ai-col-head">この講座で身につくこと</span>
+      <ul>
+        <li><svg class="ai-check" viewBox="0 0 14 14"><polyline points="2,7 5,10 12,3"/></svg>本番で崩れる場面の体験</li>
+        <li><svg class="ai-check" viewBox="0 0 14 14"><polyline points="2,7 5,10 12,3"/></svg>感情が強い相談への対応</li>
+        <li><svg class="ai-check" viewBox="0 0 14 14"><polyline points="2,7 5,10 12,3"/></svg>長文に飲まれない力</li>
+        <li><svg class="ai-check" viewBox="0 0 14 14"><polyline points="2,7 5,10 12,3"/></svg>選ばれる伝え方への修正</li>
+        <li><svg class="ai-check" viewBox="0 0 14 14"><polyline points="2,7 5,10 12,3"/></svg>課題を実際に直す力</li>
+      </ul>
+    </div>
+  </div>
+  <div class="ai-message"><p>この講座では、完全マンツーマンの模擬鑑定とリアルタイムのフィードバックを通して、<strong>あなたの課題を一緒に発見し、実際に直すプロセス</strong>を大切にしています。</p></div>
+</section>
+
+
+<!-- ════ 5. 講座の特長 ════ -->
+<section class="features-section">
+  <span class="sec-eyebrow">FEATURES</span>
+  <h2 class="sec-title">この講座の特長</h2>
+  <div class="sec-rule"></div>
+  <div class="features-grid">
+    <div class="feat-card wide">
+      <div class="feat-icon"><svg viewBox="0 0 24 24"><path d="M12 20h9"/><path d="M16.5 3.5a2.121 2.121 0 0 1 3 3L7 19l-4 1 1-4L16.5 3.5z"/></svg></div>
+      <div><p class="feat-title">受講者に合わせた個別設計</p><p class="feat-desc">Googleフォームや初回のヒアリングをもとに、あなたの傾向・課題・希望に合わせて実践内容を調整するセミオーダー型の講座です。決められた内容をただ受けるのではなく、あなた自身の課題に向き合う時間にします。</p></div>
+    </div>
+    <div class="feat-card">
+      <div class="feat-icon"><svg viewBox="0 0 24 24"><path d="M17 21v-2a4 4 0 0 0-4-4H5a4 4 0 0 0-4 4v2"/><circle cx="9" cy="7" r="4"/></svg></div>
+      <p class="feat-title">完全マンツーマン</p><p class="feat-desc">あなただけのペースで丁寧に伴走します。</p>
+    </div>
+    <div class="feat-card">
+      <div class="feat-icon"><svg viewBox="0 0 24 24"><circle cx="12" cy="12" r="10"/><path d="M8 12l3 3 5-5"/></svg></div>
+      <p class="feat-title">模擬鑑定あり</p><p class="feat-desc">リアルな相談者パターンを体験。実践重視の内容です。</p>
+    </div>
+    <div class="feat-card">
+      <div class="feat-icon feat-icon-gold"><svg viewBox="0 0 24 24"><path d="M14 2H6a2 2 0 0 0-2 2v16a2 2 0 0 0 2 2h12a2 2 0 0 0 2-2V8z"/><polyline points="14 2 14 8 20 8"/><line x1="16" y1="13" x2="8" y2="13"/><line x1="16" y1="17" x2="8" y2="17"/></svg></div>
+      <p class="feat-title">振り返りシート</p><p class="feat-desc">各回のリアルタイムフィードバックに加え、後日その回全体の振り返りとおさらいをまとめたシートをお渡しします。復習にもご活用いただけます。</p>
+    </div>
+    <div class="feat-card">
+      <div class="feat-icon feat-icon-gold"><svg viewBox="0 0 24 24"><path d="M22 16.92v3a2 2 0 0 1-2.18 2 19.79 19.79 0 0 1-8.63-3.07A19.5 19.5 0 0 1 4.69 13.1 19.79 19.79 0 0 1 1.61 4.54 2 2 0 0 1 3.6 2.36h3a2 2 0 0 1 2 1.72c.127.96.361 1.903.7 2.81a2 2 0 0 1-.45 2.11L7.91 9.91a16 16 0 0 0 6.08 6.08l.97-.97a2 2 0 0 1 2.11-.45c.907.339 1.85.573 2.81.7A2 2 0 0 1 21.94 17.34z"/></svg></div>
+      <p class="feat-title">デビュー後を見据えたサポート</p><p class="feat-desc">状況に応じて、デビュー後のご相談も可能です。</p>
+    </div>
+    <div class="feat-card">
+      <div class="feat-icon"><svg viewBox="0 0 24 24"><polyline points="20 12 20 22 4 22 4 12"/><rect x="2" y="7" width="20" height="5"/><path d="M12 22V7"/><path d="M12 7H7.5a2.5 2.5 0 0 1 0-5C11 2 12 7 12 7z"/><path d="M12 7h4.5a2.5 2.5 0 0 0 0-5C13 2 12 7 12 7z"/></svg></div>
+      <p class="feat-title">各種特典つき</p><p class="feat-desc">困った時のフレーズ集など実用的な特典をご用意。後日自分のペースで復習できるチャット占い練習システムも現在準備中です。</p>
+    </div>
+  </div>
+</section>
+
+
+<!-- ════ NEW: 講座で扱う主な内容 ════ -->
+<section class="curriculum-section">
+  <span class="sec-eyebrow">CURRICULUM</span>
+  <h2 class="sec-title">講座で扱う主な内容</h2>
+  <div class="sec-rule"></div>
+  <p class="sec-lead">現場で活かせる対応力を、<br>実践を通して身につけていきます。</p>
+  <div class="curriculum-grid" style="margin-top:28px">
+    <div class="curriculum-item">
+      <div class="curriculum-num">01</div>
+      <p><strong>時間制チャット占いの基本</strong>チャット占いならではの流れと、現場感覚を対話形式でつかんでいきます。</p>
+    </div>
+    <div class="curriculum-item">
+      <div class="curriculum-num">02</div>
+      <p><strong>相談者に安心感を伝える文章対応</strong>声や表情なしで信頼をつくる、文章の組み立て方と言葉選びを学びます。</p>
+    </div>
+    <div class="curriculum-item">
+      <div class="curriculum-num">03</div>
+      <p><strong>感情が強い相談者への対応</strong>感情の波が激しいケースへの受け止め方と、言葉の返し方を実践します。</p>
+    </div>
+    <div class="curriculum-item">
+      <div class="curriculum-num">04</div>
+      <p><strong>長文相談への向き合い方</strong>情報量が多い相談でも飲まれず、要点を整理して伝える力を養います。</p>
+    </div>
+    <div class="curriculum-item">
+      <div class="curriculum-num">05</div>
+      <p><strong>情報が少ない相談者への対応</strong>短い相談文から丁寧に読み取り、安心感を届ける対応を練習します。</p>
+    </div>
+    <div class="curriculum-item">
+      <div class="curriculum-num">06</div>
+      <p><strong>アフターメッセージとリピート導線</strong>鑑定後のフォローで選ばれ続けるための、自然なつながり方を学びます。</p>
+    </div>
+    <div class="curriculum-item">
+      <div class="curriculum-num">07</div>
+      <p><strong>プラットフォームに合わせた電話対応力</strong>チャット占いプラットフォームによって、電話鑑定のカラーや求められるスタイルは異なります。それぞれの特性を踏まえた、電話対応の基礎と実践を学びます。</p>
+    </div>
+  </div>
+  <div class="curriculum-note">
+    <p>実践回（第3〜5回）は、ヒアリングをもとにあなたの傾向や課題に合わせた模擬鑑定を実施します。同じ内容を全員が受けるのではなく、受講者ごとに調整するセミオーダー型です。</p>
+  </div>
+</section>
+
+
+<!-- ════ 6. こんな方に ════ -->
+<section class="target-section">
+  <span class="sec-eyebrow">FOR WHOM</span>
+  <h2 class="sec-title">こんな方におすすめです</h2>
+  <div class="sec-rule"></div>
+  <ul class="target-list">
+    <li><svg viewBox="0 0 24 24"><polyline points="20 6 9 17 4 12"/></svg>占いを仕事にしたいが、どう活動を始めればいいかわからない</li>
+    <li><svg viewBox="0 0 24 24"><polyline points="20 6 9 17 4 12"/></svg>チャット占いに興味はあるが、相談者への対応に不安がある</li>
+    <li><svg viewBox="0 0 24 24"><polyline points="20 6 9 17 4 12"/></svg>自己流ではなく、実践で現場対応力を身につけたい</li>
+    <li><svg viewBox="0 0 24 24"><polyline points="20 6 9 17 4 12"/></svg>チャット占いデビューしたことがあるが、思うように稼げなかった</li>
+    <li><svg viewBox="0 0 24 24"><polyline points="20 6 9 17 4 12"/></svg>相談者に安心感を届けられる文章対応を身につけたい</li>
+    <li><svg viewBox="0 0 24 24"><polyline points="20 6 9 17 4 12"/></svg>未経験から、実績ある講師のもとでプロを目指したい</li>
+  </ul>
+</section>
+
+
+<!-- ════ 7. 講師紹介 ════ -->
+<section class="instructor-section">
+  <span class="sec-eyebrow">INSTRUCTOR</span>
+  <h2 class="sec-title">講師紹介</h2>
+  <div class="sec-rule"></div>
+  <div class="instructor-card">
+    <div class="instructor-inner">
+      <div class="instructor-photo">
+      <img src="yuri.jpg" alt="講師 Yuri">
+      <div class="instructor-meta">
+        <span class="instructor-badge">CHAT FORTUNE TELLING INSTRUCTOR</span>
+      <h3 class="instructor-name">Yuri</h3>
+      </div>
+    </div>
+    <div class="instructor-body">
+      <span class="instructor-badge">CHAT FORTUNE TELLING INSTRUCTOR</span>
+      <h3 class="instructor-name">Yuri</h3>
+      <p class="instructor-tagline">現場を知り、結果を出してきた講師だからこそ伝えられることがある。売れる占い師を育て続けてきた実績をもとに、未経験からでも現場で通用する対応力を一緒に築いていきます。デビューして終わりではなく、その先の未来まで伴走します。</p>
+      <ul class="instructor-list">
+        <li><svg viewBox="0 0 24 24"><polyline points="20 6 9 17 4 12"/></svg>チャット占い業界の複数の現場で、占い師の教育・プロデュースに従事</li>
+        <li><svg viewBox="0 0 24 24"><polyline points="20 6 9 17 4 12"/></svg>各チャット占いプラットフォームで、ランキング上位の占い師を多数輩出</li>
+        <li><svg viewBox="0 0 24 24"><polyline points="20 6 9 17 4 12"/></svg>未経験者を、収益を上げるプロの占い師へと育てることを得意とする</li>
+        <li><svg viewBox="0 0 24 24"><polyline points="20 6 9 17 4 12"/></svg>チャット占い業界に精通した実践型講師</li>
+      </ul>
+    </div>
+  </div>
+</section>
+
+
+<!-- ════ 8. 提携・デビュー ════ -->
+<section class="partnership-section">
+  <span class="sec-eyebrow">DEBUT PATHWAY</span>
+  <h2 class="sec-title">学んで終わりではない。<br>デビューまで見据えた<br>導線があります。</h2>
+  <div class="sec-rule"></div>
+  <p class="sec-lead">本気で活動したい方に向けた、<br>サポートの導線があります。</p>
+  <div class="partner-box">
+    <div class="partner-box-icon"><svg viewBox="0 0 24 24"><path d="M3 9l9-7 9 7v11a2 2 0 0 1-2 2H5a2 2 0 0 1-2-2z"/><polyline points="9 22 9 12 15 12 15 22"/></svg></div>
+    <p><em>大手上場企業と提携。</em><br>条件や審査に応じて、<em>人気プラットフォームへのデビュー相談</em>も可能です。</p>
+  </div>
+  <div class="support-row">
+    <div class="support-item"><div class="support-item-icon"><svg viewBox="0 0 24 24"><circle cx="12" cy="12" r="10"/><path d="M12 8v4l3 3"/></svg></div><p>デビュー相談<br>不安や疑問を解消</p></div>
+    <div class="support-item"><div class="support-item-icon"><svg viewBox="0 0 24 24"><line x1="5" y1="12" x2="19" y2="12"/><polyline points="12 5 19 12 12 19"/></svg></div><p>活動導線の<br>サポート設計</p></div>
+    <div class="support-item"><div class="support-item-icon"><svg viewBox="0 0 24 24"><path d="M17 21v-2a4 4 0 0 0-4-4H5a4 4 0 0 0-4 4v2"/><circle cx="9" cy="7" r="4"/><path d="M23 21v-2a4 4 0 0 0-3-3.87"/><path d="M16 3.13a4 4 0 0 1 0 7.75"/></svg></div><p>実践サポート<br>デビュー後フォロー</p></div>
+  </div>
+  <p class="partner-note">※紹介・デビューには条件および審査があります。デビューを保証するものではありません。<br>※主要プラットフォームでの活動にはPC環境が必要です。事前にご確認ください。</p>
+</section>
+
+
+<!-- ════ 9. 入門講座 ════ -->
+<section class="intro-section">
+  <div class="intro-card">
+    <div class="intro-icon"><svg viewBox="0 0 24 24"><path d="M2 3h6a4 4 0 0 1 4 4v14a3 3 0 0 0-3-3H2z"/><path d="M22 3h-6a4 4 0 0 0-4 4v14a3 3 0 0 1 3-3h7z"/></svg></div>
+    <div class="intro-card-text">
+      <p>まだ迷っている方へ</p>
+      <p>まずチャット占いの世界を知りたい方向けに、入門講座もご案内しています。基礎から知りたい方も、このトークでお気軽にご相談ください。</p>
+    </div>
+  </div>
+</section>
+
+
+<!-- ════ 10. 最終CTA ════ -->
+<section class="final-cta">
+  <span class="sec-eyebrow">CONTACT</span>
+  <h2 class="sec-title">講座の詳細を<br>知りたい方へ</h2>
+  <div class="sec-rule"></div>
+  <p class="sec-lead">講座の内容・料金・スケジュールなど、<br>まずはお気軽にご相談ください。</p>
+
+  <div class="final-cta-card">
+    <p class="label">詳しく知りたい方は、このトークに戻って</p>
+    <div class="keyword">「講座」</div>
+    <p class="desc">
+      とメッセージをお送りください。<br>
+      今の状況に合わせて、個別にご案内いたします。
+    </p>
+    <p class="note">
+      料金・スケジュール・カリキュラムの詳細など、<br>
+      どんな小さなご質問もお気軽にどうぞ。
+    </p>
+  </div>
+</section>
+
+
+<footer><p>売れるチャット占い実践講座 ｜ Yuri</p></footer>
+</body>
+</html>
