@@ -364,6 +364,49 @@
     font-size: 11px; color: var(--text-muted); margin-top: 14px; line-height: 1.75;
   }
 
+
+  /* ─── CTAボタン（外部リンク用） ─── */
+  .cta-btn-wrap {
+    display: flex;
+    flex-direction: column;
+    gap: 12px;
+    margin-top: 16px;
+  }
+  .cta-btn-line {
+    display: block;
+    width: 100%;
+    background: linear-gradient(135deg, #06c755 0%, #05a847 100%);
+    color: white;
+    text-align: center;
+    padding: 17px 20px;
+    border-radius: 50px;
+    font-family: "Noto Serif JP", serif;
+    font-size: 14px;
+    letter-spacing: 0.08em;
+    text-decoration: none;
+    box-shadow: 0 4px 18px rgba(6,199,85,0.25);
+  }
+  .cta-btn-ig {
+    display: block;
+    width: 100%;
+    background: linear-gradient(135deg, #833ab4 0%, #c13584 50%, #e1306c 100%);
+    color: white;
+    text-align: center;
+    padding: 17px 20px;
+    border-radius: 50px;
+    font-family: "Noto Serif JP", serif;
+    font-size: 14px;
+    letter-spacing: 0.08em;
+    text-decoration: none;
+    box-shadow: 0 4px 18px rgba(193,53,132,0.22);
+  }
+  .cta-btn-note {
+    text-align: center;
+    font-size: 11px;
+    color: var(--text-muted);
+    letter-spacing: 0.05em;
+    margin-top: 4px;
+  }
   footer {
     background: var(--text-main); color: rgba(255,255,255,0.3); text-align: center;
     padding: 28px 20px; font-family: "Noto Serif JP", serif; font-size: 10px; letter-spacing: 0.15em;
@@ -410,10 +453,12 @@
 
     <!-- ヒーロー CTA カード（軽め） -->
     <div class="hero-cta">
-      <p>詳しく知りたい方は、このトークに戻って</p>
-      <div class="kw">「講座」</div>
-      <p>と送ってください。</p>
-      <small>今の状況に合わせて個別にご案内します</small>
+      <p>詳細を知りたい方は、お気軽にご連絡ください。</p>
+      <div class="cta-btn-wrap">
+        <a href="https://lin.ee/TZ04VNp" class="cta-btn-line">公式LINEから問い合わせる</a>
+        <a href="https://www.instagram.com/insight.session_?igsh=MWVzZTdpMDh4d2ttcg%3D%3D&utm_source=qr" class="cta-btn-ig">InstagramのDMから問い合わせる</a>
+      </div>
+      <p class="cta-btn-note">どちらからでもお気軽にどうぞ</p>
     </div>
   </div>
 </section>
@@ -667,16 +712,16 @@
   <p class="sec-lead">講座の内容・料金・スケジュールなど、<br>まずはお気軽にご相談ください。</p>
 
   <div class="final-cta-card">
-    <p class="label">詳しく知りたい方は、このトークに戻って</p>
-    <div class="keyword">「講座」</div>
-    <p class="desc">
-      とメッセージをお送りください。<br>
-      今の状況に合わせて、個別にご案内いたします。
+    <p class="label">
+      講座の内容・料金・スケジュールなど、<br>
+      まずはお気軽にご相談ください。<br>
+      公式LINEまたはInstagramのDMから<br>ご連絡いただけます。
     </p>
-    <p class="note">
-      料金・スケジュール・カリキュラムの詳細など、<br>
-      どんな小さなご質問もお気軽にどうぞ。
-    </p>
+    <div class="cta-btn-wrap" style="margin-top:20px">
+      <a href="https://lin.ee/TZ04VNp" class="cta-btn-line">公式LINEから問い合わせる</a>
+      <a href="https://www.instagram.com/insight.session_?igsh=MWVzZTdpMDh4d2ttcg%3D%3D&utm_source=qr" class="cta-btn-ig">InstagramのDMから問い合わせる</a>
+    </div>
+    <p class="cta-btn-note" style="margin-top:14px">どんな小さなご質問もお気軽にどうぞ</p>
   </div>
 </section>
 
