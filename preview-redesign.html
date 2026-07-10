@@ -41,11 +41,11 @@ h1 .gold{color:#8b5c0f;background:linear-gradient(180deg,#7c4d08,#c29435 52%,#76
 
 /* 第2案：タイトルを主役にし、写真を縦型でコンパクトに配置 */
 .hero{padding:46px 56px 54px}
-.hero-core{display:grid;grid-template-columns:minmax(0,1.1fr) minmax(300px,.9fr);gap:46px;align-items:center;margin-bottom:30px}
-.hero-copy{min-width:0}
+.hero-core{display:block;max-width:920px;margin:0 auto 34px}
+.hero-copy{min-width:0;text-align:center}
 .hero-copy .ornament{margin-bottom:16px}
 .hero-copy .eyebrow{font-size:13px;margin-bottom:26px;padding:9px 20px}
-h1{font-size:58px;line-height:1.38;margin-bottom:18px;letter-spacing:.025em;color:#143a59;text-shadow:0 2px 0 rgba(255,255,255,.85)}
+h1{font-size:64px;line-height:1.38;margin-bottom:18px;letter-spacing:.025em;color:#143a59;text-shadow:0 2px 0 rgba(255,255,255,.85)}
 h1 .gold{color:#9a6814;background:none;-webkit-background-clip:initial;-webkit-text-fill-color:currentColor;text-shadow:0 1px 0 #fff,0 2px 0 rgba(214,181,94,.22)}
 .subtitle{font-size:20px;line-height:1.9;margin-bottom:24px}
 .photo{width:100%;max-width:390px;margin:0 auto;border-radius:4px 48px 4px 48px}
@@ -60,11 +60,9 @@ h1 .gold{color:#9a6814;background:none;-webkit-background-clip:initial;-webkit-t
 @media(max-width:760px){
  .topbar{height:48px;padding:0 17px}.brand{font-size:10px}
  .hero{padding:28px 18px 38px}
- .hero-core{grid-template-columns:1fr;gap:26px;margin-bottom:24px}
+ .hero-core{display:block;margin-bottom:26px}
  .hero-copy .eyebrow{font-size:11px;margin-bottom:20px;padding:7px 12px}
- h1{font-size:42px;line-height:1.4;margin-bottom:14px}.subtitle{font-size:17px}
- .photo{max-width:320px;border-radius:4px 38px 4px 38px}
- .photo img{height:360px;border-radius:2px 33px 2px 33px}.photo:after{border-radius:2px 33px 2px 33px}
+ h1{font-size:44px;line-height:1.4;margin-bottom:14px}.subtitle{font-size:17px}
  .badge{font-size:12px;padding:8px 12px}
  .message{padding:23px 19px}.message .lead{font-size:19px}.message p{font-size:16px}
  .cta{font-size:17px}
@@ -85,7 +83,6 @@ h1 .gold{color:#9a6814;background:none;-webkit-background-clip:initial;-webkit-t
       <p class="subtitle">未経験から、時間制チャット占いで<br>選ばれるプロを目指す</p>
       <div class="badges"><span class="badge">完全マンツーマン</span><span class="badge">個別設計</span><span class="badge">実践演習</span></div>
     </div>
-    <div class="photo"><img src="hero.jpg" alt="パソコンでチャット占いを行う女性"></div>
   </div>
   <div class="message">
     <p class="lead">チャット占いは、<br>デビューすることがゴールではありません。</p>
