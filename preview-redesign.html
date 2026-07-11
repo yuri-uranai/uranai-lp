@@ -71,6 +71,22 @@ h1 .gold{color:#8b5c0f;background:linear-gradient(180deg,#7c4d08,#c29435 52%,#76
 .practice-label{display:block;text-align:center;margin-bottom:13px;color:#ecd99f;font-family:"Noto Serif JP",serif;font-size:10px;letter-spacing:.2em}
 .practice-title{text-align:center;font-family:"Noto Serif JP",serif;font-size:21px;line-height:1.65;letter-spacing:.025em;margin-bottom:10px}
 .practice-text{color:#eef7fa;font-size:14px;line-height:2}
+.journey{padding:72px 28px 80px;background:#fff}
+.journey .en,.support .en{text-align:center;color:var(--gold);font-family:"Noto Serif JP",serif;font-size:10px;letter-spacing:.3em}
+.journey h2,.support h2{text-align:center;font-family:"Noto Serif JP",serif;color:var(--navy);font-size:29px;line-height:1.65;margin:9px 0 17px;letter-spacing:.025em}
+.journey-lead,.support-lead{text-align:center;color:#526b7c;font-size:14px;line-height:1.9;margin:0 auto 31px}
+.journey-list{max-width:820px;margin:0 auto;display:grid;grid-template-columns:repeat(2,1fr);gap:12px 16px}
+.journey-step{position:relative;padding:24px 22px 23px 62px;border:1px solid rgba(184,137,47,.28);background:linear-gradient(145deg,#fff,#f8fcfd);box-shadow:0 7px 20px rgba(31,73,100,.055)}
+.journey-step:before{content:attr(data-step);position:absolute;left:18px;top:22px;width:29px;height:29px;display:grid;place-items:center;border-radius:50%;background:#e6f5fa;border:1px solid rgba(184,137,47,.48);font-family:"Noto Serif JP",serif;color:#936313;font-size:11px}
+.journey-title{font-family:"Noto Serif JP",serif;color:var(--navy);font-size:16px;line-height:1.65;font-weight:700;margin-bottom:5px}
+.journey-text{color:#566d7d;font-size:13px;line-height:1.85}
+.support{padding:72px 28px 82px;background:linear-gradient(180deg,#edf8fb,#f8fcfd)}
+.support-grid{max-width:820px;margin:0 auto 28px;display:grid;grid-template-columns:repeat(2,1fr);gap:13px}
+.support-item{padding:24px 22px;background:rgba(255,255,255,.9);border-top:2px solid var(--gold2);box-shadow:0 8px 22px rgba(31,73,100,.06)}
+.support-title{font-family:"Noto Serif JP",serif;color:var(--navy);font-size:16px;line-height:1.7;font-weight:700;margin-bottom:6px}
+.support-text{color:#566d7d;font-size:13px;line-height:1.9}
+.support .cta{margin-top:31px}
+.cta-caption{text-align:center;color:#607889;font-size:11px;margin-top:10px}
 
 /* 第2案：タイトルを主役にし、写真を縦型でコンパクトに配置 */
 .hero{padding:46px 56px 54px}
@@ -127,6 +143,11 @@ h1 .course-title{display:block;font-size:48px;white-space:nowrap;color:#143a59}
  .curriculum-item:before{font-size:12px}.curriculum-title{font-size:16px}.curriculum-text{font-size:13px;line-height:1.85}
  .practice-feature{margin-top:18px;padding:25px 20px 24px;border-radius:3px 22px 3px 22px}
  .practice-title{font-size:19px}.practice-text{font-size:13px;line-height:1.9}
+ .journey,.support{padding:54px 18px 62px}.journey h2,.support h2{font-size:25px}.journey-lead,.support-lead{font-size:13px;margin-bottom:24px}
+ .journey-list{grid-template-columns:1fr;gap:9px}.journey-step{padding:20px 15px 19px 53px}
+ .journey-step:before{left:14px;top:19px;width:27px;height:27px}.journey-title{font-size:16px}.journey-text{font-size:13px}
+ .support-grid{grid-template-columns:1fr;gap:10px}.support-item{padding:21px 18px}.support-title{font-size:16px}.support-text{font-size:13px}
+ .support .cta{margin-top:26px}
 }
 </style>
 </head>
@@ -238,6 +259,64 @@ h1 .course-title{display:block;font-size:48px;white-space:nowrap;color:#143a59}
     <h3 class="practice-title">一人ひとりに合わせた<br>個別設計・実践トレーニング</h3>
     <p class="practice-text">経験・得意な占術・現在の課題に合わせて内容を設計し、実践とフィードバックを重ねます。</p>
   </div>
+</section>
+<section class="journey">
+  <p class="en">LEARNING JOURNEY</p>
+  <h2>全6回で身につける<br>実践ステップ</h2>
+  <div class="rule"></div>
+  <p class="journey-lead">各回60分・完全マンツーマン。<br>基礎から実践へ、段階的に力を育てます。</p>
+  <div class="journey-list">
+    <article class="journey-step" data-step="01">
+      <h3 class="journey-title">時間制チャット占いの基本</h3>
+      <p class="journey-text">チャット占いの前提と、鑑定を進めるうえで必要な基本を整理します。</p>
+    </article>
+    <article class="journey-step" data-step="02">
+      <h3 class="journey-title">時間制鑑定の実践演習</h3>
+      <p class="journey-text">実際のやり取りを想定し、時間制チャット占いの流れを体感します。</p>
+    </article>
+    <article class="journey-step" data-step="03">
+      <h3 class="journey-title">感情が強い相談者への対応</h3>
+      <p class="journey-text">高まった感情を受け止めながら、安心へ導く言葉の選び方を実践します。</p>
+    </article>
+    <article class="journey-step" data-step="04">
+      <h3 class="journey-title">思い込みが強い相談者への対応</h3>
+      <p class="journey-text">相手を否定せず、視野を広げるための伝え方と進行を身につけます。</p>
+    </article>
+    <article class="journey-step" data-step="05">
+      <h3 class="journey-title">長文相談への対応</h3>
+      <p class="journey-text">多くの情報から要点を整理し、本当に知りたいことをくみ取る練習をします。</p>
+    </article>
+    <article class="journey-step" data-step="06">
+      <h3 class="journey-title">情報が少ない相談と鑑定後のフォロー</h3>
+      <p class="journey-text">限られた情報で鑑定を組み立て、アフターメッセージまで実践します。</p>
+    </article>
+  </div>
+</section>
+<section class="support">
+  <p class="en">ONGOING SUPPORT</p>
+  <h2>学びを実践につなげる<br>サポート</h2>
+  <div class="rule"></div>
+  <p class="support-lead">受講中だけでなく、講座を終えたあとも。<br>現場で迷わないための支えを用意しています。</p>
+  <div class="support-grid">
+    <article class="support-item">
+      <h3 class="support-title">公式LINEで随時質問受付</h3>
+      <p class="support-text">受講中に生まれた疑問を、そのままにせず相談できます。</p>
+    </article>
+    <article class="support-item">
+      <h3 class="support-title">実践で使えるフレーズ集</h3>
+      <p class="support-text">返信に迷ったときの助けになる、実用的な言葉をまとめてお渡しします。</p>
+    </article>
+    <article class="support-item">
+      <h3 class="support-title">電話研修を1回実施</h3>
+      <p class="support-text">活動の幅を広げられるよう、電話鑑定についても実践的に学びます。</p>
+    </article>
+    <article class="support-item">
+      <h3 class="support-title">卒業後のZoom面談</h3>
+      <p class="support-text">卒業後1か月・3か月・半年の節目に、活動状況や仕事の悩みを伺います。</p>
+    </article>
+  </div>
+  <a class="cta" href="#">講座について相談する <span>›</span></a>
+  <p class="cta-caption">ご不明な点や、ご自身に合う講座かどうかもお気軽にご相談ください</p>
 </section>
 </main>
 </div>
