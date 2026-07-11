@@ -109,6 +109,24 @@ h1 .gold{color:#8b5c0f;background:linear-gradient(180deg,#7c4d08,#c29435 52%,#76
 .message-body p:last-child{margin-bottom:0}
 .message-emphasis{margin:27px 0 22px;padding:22px 20px;text-align:center;border-top:1px solid rgba(236,217,159,.45);border-bottom:1px solid rgba(236,217,159,.45);font-family:"Noto Serif JP",serif;color:#fff;font-size:18px;line-height:2;font-weight:700}
 .message-emphasis strong{color:#f0d993;font-weight:700}
+.pathway{position:relative;padding:74px 28px 82px;background:linear-gradient(180deg,#edf8fb 0%,#f8fcfd 100%);overflow:hidden}
+.pathway:before{content:"";position:absolute;width:360px;height:360px;border-radius:50%;left:-210px;bottom:-180px;background:radial-gradient(circle,rgba(135,198,222,.25),transparent 68%)}
+.pathway>*{position:relative}
+.pathway .en{text-align:center;color:var(--gold);font-family:"Noto Serif JP",serif;font-size:10px;letter-spacing:.3em}
+.pathway h2{text-align:center;font-family:"Noto Serif JP",serif;color:var(--navy);font-size:29px;line-height:1.65;margin:9px 0 17px;letter-spacing:.025em}
+.pathway-lead{text-align:center;color:#526b7c;font-size:14px;line-height:2;margin:0 auto 31px}
+.pathway-flow{max-width:820px;margin:0 auto;display:grid;grid-template-columns:1fr 54px 1fr;align-items:stretch}
+.pathway-card{padding:29px 25px 27px;background:rgba(255,255,255,.92);border:1px solid rgba(184,137,47,.34);box-shadow:0 10px 27px rgba(31,73,100,.07)}
+.pathway-card:first-child{border-radius:3px 24px 3px 24px}
+.pathway-card:last-child{border-radius:24px 3px 24px 3px}
+.pathway-tag{color:#a77a25;font-family:"Noto Serif JP",serif;font-size:9px;letter-spacing:.2em;margin-bottom:9px}
+.pathway-title{font-family:"Noto Serif JP",serif;color:var(--navy);font-size:18px;line-height:1.7;font-weight:700;margin-bottom:9px}
+.pathway-text{color:#526a7b;font-size:13px;line-height:1.95}
+.pathway-arrow{display:grid;place-items:center;color:#b88a32;font-family:"Noto Serif JP",serif;font-size:25px}
+.pathway-highlight{max-width:820px;margin:18px auto 0;padding:27px 28px;text-align:center;background:linear-gradient(145deg,#173754,#285b7c);border:1px solid #d0ab52;color:#fff;box-shadow:0 11px 28px rgba(23,55,84,.15)}
+.pathway-highlight-title{font-family:"Noto Serif JP",serif;color:#f0da98;font-size:19px;line-height:1.8;font-weight:700;margin-bottom:7px}
+.pathway-highlight-text{color:#eff8fa;font-size:13px;line-height:1.95}
+.pathway-notes{max-width:820px;margin:17px auto 0;color:#69808f;font-size:10.5px;line-height:1.8}
 
 /* 第2案：タイトルを主役にし、写真を縦型でコンパクトに配置 */
 .hero{padding:46px 56px 54px}
@@ -179,6 +197,10 @@ h1 .course-title{display:block;font-size:48px;white-space:nowrap;color:#143a59}
  .instructor-message{margin-top:18px;padding:28px 19px 29px;border-radius:3px 22px 3px 22px}
  .message-label{margin-bottom:17px}.message-body{font-size:13px;line-height:2.05}.message-body p{margin-bottom:15px}
  .message-emphasis{margin:22px 0 18px;padding:18px 7px;font-size:16px;line-height:1.95}
+ .pathway{padding:55px 18px 63px}.pathway h2{font-size:25px}.pathway-lead{font-size:13px;margin-bottom:24px}
+ .pathway-flow{grid-template-columns:1fr}.pathway-card{padding:23px 19px}.pathway-arrow{height:38px;transform:rotate(90deg);font-size:22px}
+ .pathway-title{font-size:17px}.pathway-text{font-size:13px}.pathway-highlight{margin-top:14px;padding:24px 18px}
+ .pathway-highlight-title{font-size:17px}.pathway-highlight-text{font-size:13px}.pathway-notes{font-size:10px}
 }
 </style>
 </head>
@@ -383,6 +405,33 @@ h1 .course-title{display:block;font-size:48px;white-space:nowrap;color:#143a59}
       <div class="message-emphasis">身につけた占術を、<br><strong>眠らせたままにしてほしくない。</strong><br>好きで学んだ占いを、誰かの力になり、<br>自分自身の収入にもつながる仕事へ。</div>
       <p>そのための実践力を、一人ひとりに合わせて丁寧にお伝えします。</p>
     </div>
+  </div>
+</section>
+<section class="pathway">
+  <p class="en">DEBUT PATHWAY</p>
+  <h2>身につけた力を、<br>実際の活動へつなげる導線も。</h2>
+  <div class="rule"></div>
+  <p class="pathway-lead">講座で学んで終わりではなく、<br>その先の活動まで見据えています。</p>
+  <div class="pathway-flow">
+    <article class="pathway-card">
+      <p class="pathway-tag">COURSE</p>
+      <h3 class="pathway-title">講座で、現場に必要な<br>実践力を身につける</h3>
+      <p class="pathway-text">完全マンツーマンの実践とフィードバックを通して、チャット鑑定で選ばれるための土台を整えます。</p>
+    </article>
+    <div class="pathway-arrow">→</div>
+    <article class="pathway-card">
+      <p class="pathway-tag">NEXT STEP</p>
+      <h3 class="pathway-title">条件を満たした方は、<br>提携先への紹介が可能</h3>
+      <p class="pathway-text">業界大手クラスの占いプロダクションと提携。人気占いプラットフォームでの活動を目指す方へ、デビュー相談の機会をご用意しています。</p>
+    </article>
+  </div>
+  <div class="pathway-highlight">
+    <p class="pathway-highlight-title">大手上場企業との提携による<br>デビュー導線</p>
+    <p class="pathway-highlight-text">学んだスキルを活かし、プロとしての一歩を踏み出したい方を、その先の活動機会へつなぎます。</p>
+  </div>
+  <div class="pathway-notes">
+    <p>※ご紹介・所属・デビューには、提携先所定の条件および審査があります。所属やデビューを保証するものではありません。</p>
+    <p>※活動に必要な環境や条件については、個別にご案内します。</p>
   </div>
 </section>
 </main>
