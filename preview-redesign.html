@@ -33,11 +33,21 @@ h1 .gold{color:#8b5c0f;background:linear-gradient(180deg,#7c4d08,#c29435 52%,#76
 .cta{display:block;text-decoration:none;text-align:center;color:white;background:linear-gradient(135deg,#173754,#2d6387);border:1px solid #d6b45e;padding:17px 18px;border-radius:3px;font-family:"Noto Serif JP",serif;font-size:16px;font-weight:700;letter-spacing:.07em;box-shadow:0 8px 20px rgba(23,55,84,.22),inset 0 0 0 2px rgba(255,255,255,.12)}
 .cta span{color:#ecd695;margin-left:8px}
 .note{text-align:center;font-size:11px;color:#607889;margin-top:10px}
-.next{padding:50px 28px 55px;background:linear-gradient(180deg,#fff,#f3fbfe)}
+.next{position:relative;overflow:hidden;padding:64px 28px 72px;background:linear-gradient(180deg,#fff 0%,#f4fbfd 55%,#eaf7fb 100%)}
+.next:before{content:"";position:absolute;width:320px;height:320px;border-radius:50%;right:-170px;top:80px;background:radial-gradient(circle,rgba(173,222,238,.27),transparent 68%)}
+.next>*{position:relative}
 .next .en{text-align:center;color:var(--gold);font-family:"Noto Serif JP",serif;font-size:10px;letter-spacing:.3em}
-.next h2{text-align:center;font-family:"Noto Serif JP",serif;color:var(--navy);font-size:25px;line-height:1.65;margin:8px 0 15px}
+.next h2{text-align:center;font-family:"Noto Serif JP",serif;color:var(--navy);font-size:32px;line-height:1.62;margin:9px 0 17px;letter-spacing:.025em}
+.next h2 .gold-word{color:#9a6814}
 .rule{width:72px;height:1px;background:linear-gradient(90deg,transparent,var(--gold),transparent);margin:0 auto 20px}
-.next p{text-align:center;font-size:16px;line-height:2;color:#4c6475}
+.chance-intro{text-align:center;font-family:"Noto Serif JP",serif;color:var(--navy);font-size:18px;line-height:1.9;font-weight:700;margin:0 auto 30px}
+.chance-body{max-width:760px;margin:0 auto;padding:30px 34px;background:rgba(255,255,255,.82);border-top:2px solid var(--gold2);box-shadow:0 12px 34px rgba(31,73,100,.08)}
+.chance-body p{text-align:left;font-size:16px;line-height:2.05;color:#3d5567;margin-bottom:18px}
+.chance-body p:last-child{margin-bottom:0}
+.foundation-box{max-width:760px;margin:26px auto 0;padding:29px 32px;text-align:center;background:linear-gradient(135deg,rgba(232,247,252,.94),rgba(255,255,255,.96));border:1px solid rgba(184,137,47,.48);box-shadow:0 10px 28px rgba(31,73,100,.08)}
+.foundation-title{font-family:"Noto Serif JP",serif;color:var(--navy);font-size:24px;line-height:1.7;font-weight:700;margin-bottom:12px}
+.foundation-title strong{color:#936313;font-size:1.12em}
+.foundation-text{text-align:left;font-size:14px;line-height:2;color:#4b6475}
 
 /* 第2案：タイトルを主役にし、写真を縦型でコンパクトに配置 */
 .hero{padding:46px 56px 54px}
@@ -82,7 +92,10 @@ h1 .course-title{display:block;font-size:48px;white-space:nowrap;color:#143a59}
  .badge{font-size:12px;padding:8px 12px}
  .message{padding:23px 19px}.message .lead{font-size:19px}.message p{font-size:16px}
  .cta{font-size:17px}
- .next{padding:44px 22px 50px}.next h2{font-size:23px}
+ .next{padding:49px 18px 56px}.next h2{font-size:27px;line-height:1.58}
+ .chance-intro{font-size:16px;margin-bottom:24px}
+ .chance-body{padding:24px 20px}.chance-body p{font-size:15px;line-height:2;margin-bottom:16px}
+ .foundation-box{margin-top:20px;padding:24px 18px}.foundation-title{font-size:21px}.foundation-text{font-size:13px;line-height:1.95}
 }
 </style>
 </head>
@@ -107,18 +120,23 @@ h1 .course-title{display:block;font-size:48px;white-space:nowrap;color:#143a59}
       </div>
     </div>
   </div>
-  <div class="message">
-    <p class="lead">チャット占いは、<br>デビューすることがゴールではありません。</p>
-    <p>準備不足のまま現場に出ると、数多くの占い師の中に埋もれ、思うように相談が入らないまま、活動を続けられなくなることもあります。<br><br>だからこそデビュー前に、チャット鑑定ならではの対応力・伝え方・実践スキルを身につけ、<strong>選ばれ、収益につなげるための土台</strong>を整えておくことが大切です。</p>
-  </div>
   <a class="cta" href="#">講座の詳細を知る <span>›</span></a>
   <p class="note">※これは新デザインの確認用ページです</p>
 </section>
 <section class="next">
-  <p class="en">THE FIRST STEP</p>
-  <h2>占いができることと、<br>選ばれることは違う</h2>
+  <p class="en">THE FIRST CHANCE</p>
+  <h2>デビュー直後のチャンスは、<br><span class="gold-word">一度きり。</span></h2>
   <div class="rule"></div>
-  <p>鑑定結果だけではなく、相談者が受け取りやすい言葉で伝え、安心感を届ける力が、選ばれ続ける占い師の土台になります。</p>
+  <p class="chance-intro">デビューはゴールではなく、<br>「選ばれるかどうか」が問われるスタートです。</p>
+  <div class="chance-body">
+    <p>時間制チャット占いにおいて、デビュー直後は、多くの相談者に存在を知ってもらうための大切な時期です。</p>
+    <p>そのタイミングで十分に魅力を伝えられなければ、どれほど鑑定力があっても、多くの占い師の中に埋もれてしまうことがあります。</p>
+    <p>チャット鑑定で求められるのは、占いの結果を伝えることだけではありません。文章で安心感を届ける力、限られた時間の中で信頼を育てる力、相談者の感情や状況に応じて言葉を選ぶ力が必要です。</p>
+  </div>
+  <div class="foundation-box">
+    <p class="foundation-title">だからこそ、デビュー前に<br><strong>「選ばれるための土台」</strong>を。</p>
+    <p class="foundation-text">チャット鑑定ならではの対応力を実践的に身につけておくことが、デビュー直後から選ばれ、その先の安定した活動と収益へつながっていきます。</p>
+  </div>
 </section>
 </main>
 </div>
