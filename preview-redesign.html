@@ -142,6 +142,20 @@ h1 .gold{color:#8b5c0f;background:linear-gradient(180deg,#7c4d08,#c29435 52%,#76
 .income-amount{font-family:"Noto Serif JP",serif;color:var(--navy);font-size:15px;line-height:1.5}
 .income-amount strong{display:block;color:#986715;font-size:28px;line-height:1.45;letter-spacing:.02em}
 .income-note{max-width:820px;margin:16px auto 0;color:#6b808e;font-size:10.5px;line-height:1.8}
+.enrollment{padding:74px 28px 82px;background:linear-gradient(180deg,#edf8fb,#f9fcfd)}
+.enrollment .en{text-align:center;color:var(--gold);font-family:"Noto Serif JP",serif;font-size:10px;letter-spacing:.3em}
+.enrollment h2{text-align:center;font-family:"Noto Serif JP",serif;color:var(--navy);font-size:29px;line-height:1.65;margin:9px 0 17px;letter-spacing:.025em}
+.enrollment-lead{text-align:center;color:#526b7c;font-size:14px;line-height:2;margin:0 auto 30px}
+.enrollment-card{max-width:820px;margin:0 auto;padding:34px;background:rgba(255,255,255,.94);border:1px solid rgba(184,137,47,.38);border-radius:4px 30px 4px 30px;box-shadow:0 12px 30px rgba(31,73,100,.08)}
+.enrollment-name{text-align:center;font-family:"Noto Serif JP",serif;color:var(--navy);font-size:21px;line-height:1.7;font-weight:700;margin-bottom:22px}
+.enrollment-grid{display:grid;grid-template-columns:repeat(2,1fr);gap:10px 14px;margin-bottom:22px}
+.enrollment-item{padding:17px 18px;background:#f4fafc;border-left:2px solid var(--gold2)}
+.enrollment-key{color:#9d7429;font-family:"Noto Serif JP",serif;font-size:9px;letter-spacing:.14em;margin-bottom:4px}
+.enrollment-value{color:#425d70;font-family:"Noto Serif JP",serif;font-size:14px;line-height:1.75;font-weight:600}
+.enrollment-guide{padding:22px 20px;text-align:center;background:linear-gradient(145deg,#173754,#285b7c);color:#fff;margin-bottom:23px}
+.enrollment-guide-title{font-family:"Noto Serif JP",serif;color:#f0da98;font-size:17px;line-height:1.8;font-weight:700;margin-bottom:6px}
+.enrollment-guide-text{color:#eef7fa;font-size:13px;line-height:1.9}
+.enrollment .cta{margin-top:0}
 
 /* 第2案：タイトルを主役にし、写真を縦型でコンパクトに配置 */
 .hero{padding:46px 56px 54px}
@@ -220,6 +234,10 @@ h1 .course-title{display:block;font-size:48px;white-space:nowrap;color:#143a59}
  .income{padding:55px 18px 63px}.income h2{font-size:25px}.income-lead{font-size:13px;margin-bottom:24px}
  .income-visual{height:190px;margin-bottom:16px;border-radius:3px 22px 3px 22px}.income-visual img{object-position:center 45%}
  .income-grid{grid-template-columns:1fr;gap:10px}.income-card{padding:24px 18px 22px}.income-label{font-size:15px}.income-amount strong{font-size:25px}.income-note{font-size:10px}
+ .enrollment{padding:55px 18px 63px}.enrollment h2{font-size:25px}.enrollment-lead{font-size:13px;margin-bottom:24px}
+ .enrollment-card{padding:25px 17px;border-radius:3px 22px 3px 22px}.enrollment-name{font-size:19px;margin-bottom:18px}
+ .enrollment-grid{grid-template-columns:1fr;gap:8px;margin-bottom:18px}.enrollment-item{padding:15px 14px}
+ .enrollment-value{font-size:13px}.enrollment-guide{padding:20px 14px;margin-bottom:19px}.enrollment-guide-title{font-size:16px}.enrollment-guide-text{font-size:12.5px}
 }
 </style>
 </head>
@@ -473,6 +491,29 @@ h1 .course-title{display:block;font-size:48px;white-space:nowrap;color:#143a59}
     </article>
   </div>
   <p class="income-note">※過去の活動事例を参考にした収入イメージです。活動時間・所属条件・報酬体系などにより収入は異なります。掲載金額は成果を保証するものではありません。</p>
+</section>
+<section class="enrollment">
+  <p class="en">ENROLLMENT INFORMATION</p>
+  <h2>受講について</h2>
+  <div class="rule"></div>
+  <p class="enrollment-lead">本気で実践力を身につけたい方へ。<br>一人ひとりに合わせて丁寧に伴走します。</p>
+  <div class="enrollment-card">
+    <h3 class="enrollment-name">売れるチャット占い実践講座</h3>
+    <div class="enrollment-grid">
+      <div class="enrollment-item"><p class="enrollment-key">LESSON</p><p class="enrollment-value">全6回・各60分</p></div>
+      <div class="enrollment-item"><p class="enrollment-key">STYLE</p><p class="enrollment-value">完全マンツーマン</p></div>
+      <div class="enrollment-item"><p class="enrollment-key">PRACTICE</p><p class="enrollment-value">個別設計の実践トレーニング</p></div>
+      <div class="enrollment-item"><p class="enrollment-key">SUPPORT</p><p class="enrollment-value">受講中の公式LINEサポート</p></div>
+      <div class="enrollment-item"><p class="enrollment-key">BENEFITS</p><p class="enrollment-value">実用的な特典・振り返り</p></div>
+      <div class="enrollment-item"><p class="enrollment-key">AFTER SUPPORT</p><p class="enrollment-value">卒業後の定期面談</p></div>
+    </div>
+    <div class="enrollment-guide">
+      <p class="enrollment-guide-title">受講料・開講日程は<br>個別にご案内します</p>
+      <p class="enrollment-guide-text">ご希望や受講時期を伺いながら、講座内容とあわせて丁寧にご説明します。</p>
+    </div>
+    <a class="cta" href="#">講座について相談する <span>›</span></a>
+    <p class="cta-caption">ご自身に合う講座かどうかも、お気軽にご相談ください</p>
+  </div>
 </section>
 </main>
 </div>
