@@ -87,6 +87,21 @@ h1 .gold{color:#8b5c0f;background:linear-gradient(180deg,#7c4d08,#c29435 52%,#76
 .support-text{color:#566d7d;font-size:13px;line-height:1.9}
 .support .cta{margin-top:31px}
 .cta-caption{text-align:center;color:#607889;font-size:11px;margin-top:10px}
+.instructor{position:relative;padding:76px 28px 82px;background:#fff}
+.instructor .en{text-align:center;color:var(--gold);font-family:"Noto Serif JP",serif;font-size:10px;letter-spacing:.3em}
+.instructor h2{text-align:center;font-family:"Noto Serif JP",serif;color:var(--navy);font-size:29px;line-height:1.65;margin:9px 0 17px;letter-spacing:.025em}
+.instructor-card{max-width:860px;margin:0 auto;display:grid;grid-template-columns:260px minmax(0,1fr);overflow:hidden;background:linear-gradient(145deg,#f4fbfd,#fff);border:1px solid rgba(184,137,47,.35);border-radius:4px 34px 4px 34px;box-shadow:0 14px 34px rgba(31,73,100,.09)}
+.instructor-photo{min-height:100%;background:#eaf6fa;overflow:hidden}
+.instructor-photo img{display:block;width:100%;height:100%;min-height:510px;object-fit:cover;object-position:center top}
+.instructor-content{padding:35px 34px 32px}
+.instructor-label{color:#a77a25;font-family:"Noto Serif JP",serif;font-size:10px;letter-spacing:.18em;margin-bottom:7px}
+.instructor-name{font-family:"Noto Serif JP",serif;color:var(--navy);font-size:32px;line-height:1.3;letter-spacing:.1em;margin-bottom:3px}
+.instructor-role{color:#607889;font-family:"Noto Serif JP",serif;font-size:12px;letter-spacing:.06em;margin-bottom:20px}
+.instructor-catch{font-family:"Noto Serif JP",serif;color:var(--navy);font-size:18px;line-height:1.9;font-weight:700;padding-bottom:17px;margin-bottom:17px;border-bottom:1px solid rgba(184,137,47,.26)}
+.instructor-copy{color:#4f6676;font-size:14px;line-height:2;margin-bottom:22px}
+.achievement-list{list-style:none;display:grid;gap:9px}
+.achievement-list li{position:relative;padding-left:20px;color:#425c6f;font-size:13px;line-height:1.75}
+.achievement-list li:before{content:"";position:absolute;left:1px;top:.72em;width:7px;height:7px;background:#7eb8d0;border:1px solid #c49a43;transform:rotate(45deg)}
 
 /* 第2案：タイトルを主役にし、写真を縦型でコンパクトに配置 */
 .hero{padding:46px 56px 54px}
@@ -148,6 +163,12 @@ h1 .course-title{display:block;font-size:48px;white-space:nowrap;color:#143a59}
  .journey-step:before{left:14px;top:19px;width:27px;height:27px}.journey-title{font-size:16px}.journey-text{font-size:13px}
  .support-grid{grid-template-columns:1fr;gap:10px}.support-item{padding:21px 18px}.support-title{font-size:16px}.support-text{font-size:13px}
  .support .cta{margin-top:26px}
+ .instructor{padding:56px 18px 64px}.instructor h2{font-size:25px}
+ .instructor-card{display:block;border-radius:3px 22px 3px 22px}
+ .instructor-photo{height:210px;min-height:0}.instructor-photo img{min-height:0;height:210px;object-position:center 18%}
+ .instructor-content{padding:20px 17px 25px}.instructor-label{font-size:9px}.instructor-name{font-size:25px}.instructor-role{font-size:10px;margin-bottom:16px}
+ .instructor-catch{font-size:16px;line-height:1.85}
+ .instructor-copy{font-size:13px;line-height:1.95;margin-bottom:19px}.achievement-list{gap:8px}.achievement-list li{font-size:12.5px}
 }
 </style>
 </head>
@@ -317,6 +338,28 @@ h1 .course-title{display:block;font-size:48px;white-space:nowrap;color:#143a59}
   </div>
   <a class="cta" href="#">講座について相談する <span>›</span></a>
   <p class="cta-caption">ご不明な点や、ご自身に合う講座かどうかもお気軽にご相談ください</p>
+</section>
+<section class="instructor">
+  <p class="en">INSTRUCTOR</p>
+  <h2>現場を知る講師だから、<br>デビュー後に必要な力まで<br>伝えられる。</h2>
+  <div class="rule"></div>
+  <div class="instructor-card">
+    <div class="instructor-photo"><img src="yuri.jpg" alt="講師 YURI"></div>
+    <div class="instructor-content">
+      <p class="instructor-label">CHAT FORTUNE TELLING EDUCATOR</p>
+      <h3 class="instructor-name">YURI</h3>
+      <p class="instructor-role">チャット占い師育成コンサルタント</p>
+      <p class="instructor-catch">知識を伝えるだけではなく、<br>現場で使える力へ変えていく。</p>
+      <p class="instructor-copy">大手占いプロダクションで、占い師教育の仕組みづくりから運営までを担当。未経験者から現役占い師まで、約2,000回にわたる研修・指導に携わってきました。<br><br>一人ひとりの課題を見つけ、実際の鑑定で使える力へ変えていくことを大切にしています。現場で培った経験をもとに、デビュー直後から選ばれ、その先も長く活動を続けられる占い師を目指して伴走します。</p>
+      <ul class="achievement-list">
+        <li>占い師教育の仕組みづくりから運営までを担当</li>
+        <li>通算約2,000回の占い師研修実績</li>
+        <li>月商100万円超の占い師を輩出</li>
+        <li>売上向上・リピート導線の指導実績</li>
+        <li>大手占いプラットフォームの支援経験</li>
+      </ul>
+    </div>
+  </div>
 </section>
 </main>
 </div>
