@@ -33,6 +33,28 @@ h1{font-family:"Noto Serif JP",serif;color:var(--navy);font-size:34px;line-heigh
 .badges{display:flex;justify-content:center;gap:9px;flex-wrap:wrap}
 .badge{padding:8px 14px;background:rgba(255,255,255,.92);border:1px solid rgba(169,119,30,.44);border-radius:999px;color:var(--navy);font-family:"Noto Serif JP",serif;font-size:12px;font-weight:600;box-shadow:0 5px 14px rgba(31,73,100,.07)}
 .preview-note{text-align:center;margin-top:17px;color:#6c8290;font-size:10px}
+.problem{padding:78px 48px 84px;background:linear-gradient(180deg,#fff 0%,#f7fcfd 100%)}
+.section-inner{max-width:880px;margin:auto}
+.section-label{text-align:center;color:var(--gold);font-family:"Noto Serif JP",serif;font-size:11px;font-weight:600;letter-spacing:.2em;margin-bottom:13px}
+.section-title{text-align:center;color:var(--navy);font-family:"Noto Serif JP",serif;font-size:31px;line-height:1.65;font-weight:700;letter-spacing:.025em;margin-bottom:28px}
+.lead{max-width:700px;margin:0 auto 31px;text-align:center;color:var(--ink);font-family:"Noto Serif JP",serif;font-size:16px;line-height:2.15}
+.worry-list{max-width:700px;margin:0 auto 34px;display:grid;gap:10px}
+.worry{position:relative;padding:14px 18px 14px 45px;border:1px solid rgba(169,119,30,.2);background:#fff;color:var(--navy);font-family:"Noto Serif JP",serif;font-size:15px;line-height:1.75;box-shadow:0 5px 16px rgba(31,73,100,.045)}
+.worry:before{content:"◇";position:absolute;left:18px;top:14px;color:#bc8b31;font-size:14px}
+.key-message{margin:38px auto 59px;padding:25px 20px;text-align:center;border-top:1px solid rgba(169,119,30,.5);border-bottom:1px solid rgba(169,119,30,.5);color:var(--navy);font-family:"Noto Serif JP",serif;font-size:21px;line-height:1.9;font-weight:700}
+.sub-title{text-align:center;color:var(--navy);font-family:"Noto Serif JP",serif;font-size:25px;line-height:1.65;font-weight:700;margin-bottom:24px}
+.issue-cards{display:grid;grid-template-columns:1fr 1fr;gap:16px;margin-bottom:62px}
+.issue-card{padding:27px 25px;background:#fff;border:1px solid rgba(169,119,30,.23);border-radius:3px 20px 3px 20px}
+.issue-card h3{color:var(--navy);font-family:"Noto Serif JP",serif;font-size:18px;line-height:1.65;margin-bottom:10px}
+.issue-card p{font-size:14px;line-height:2;color:#506775}
+.difference{padding:46px 50px 48px;background:var(--navy);border-radius:4px 38px 4px 38px;color:#fff;box-shadow:0 14px 30px rgba(23,55,84,.13)}
+.difference .section-label{color:#e4c579}
+.difference .sub-title{color:#fff;margin-bottom:20px}
+.difference-intro{max-width:690px;margin:0 auto 25px;text-align:left;font-family:"Noto Serif JP",serif;font-size:15px;line-height:2.1;color:#edf5f8}
+.difference-points{max-width:690px;margin:0 auto 26px;display:grid;grid-template-columns:1fr 1fr;gap:10px 18px}
+.difference-point{position:relative;padding:10px 12px 10px 29px;border-bottom:1px solid rgba(255,255,255,.16);font-size:13.5px;line-height:1.75;color:#fff}
+.difference-point:before{content:"◇";position:absolute;left:5px;color:#e4c579}
+.difference-close{margin:30px auto 0;text-align:center;color:#fff;font-family:"Noto Serif JP",serif;font-size:20px;line-height:1.9;font-weight:700}
 @media(max-width:760px){
  .topbar{height:48px;padding:0 16px}.brand{font-size:10px}.top-label{font-size:8px}
  .hero{padding:28px 17px 39px}
@@ -46,6 +68,23 @@ h1{font-family:"Noto Serif JP",serif;color:var(--navy);font-size:34px;line-heigh
  h1{font-size:clamp(23px,6.8vw,28px);line-height:1.6;margin-bottom:12px}
  .description{font-size:14px;line-height:1.95;margin-bottom:19px}
  .badges{gap:6px}.badge{padding:7px 10px;font-size:10.5px}
+ .problem{padding:57px 18px 62px}
+ .section-label{font-size:9.5px;margin-bottom:10px}
+ .section-title{font-size:clamp(23px,6.5vw,28px);line-height:1.65;margin-bottom:22px}
+ .lead{text-align:left;font-size:14px;line-height:2;margin-bottom:25px}
+ .worry-list{gap:8px;margin-bottom:28px}
+ .worry{padding:12px 13px 12px 38px;font-size:13px;line-height:1.75}
+ .worry:before{left:14px;top:12px}
+ .key-message{margin:30px auto 46px;padding:20px 5px;font-size:17px;line-height:1.9}
+ .sub-title{font-size:21px;line-height:1.7;margin-bottom:19px}
+ .issue-cards{grid-template-columns:1fr;gap:11px;margin-bottom:47px}
+ .issue-card{padding:22px 20px;border-radius:3px 16px 3px 16px}
+ .issue-card h3{font-size:16px;margin-bottom:7px}.issue-card p{font-size:13px;line-height:1.9}
+ .difference{padding:38px 20px 39px;border-radius:3px 25px 3px 25px}
+ .difference-intro{font-size:13.5px;line-height:2}
+ .difference-points{grid-template-columns:1fr;gap:5px}
+ .difference-point{font-size:12.5px;padding-top:9px;padding-bottom:9px}
+ .difference-close{text-align:left;font-size:17px;line-height:1.9}
 }
 </style>
 </head>
@@ -69,6 +108,48 @@ h1{font-family:"Noto Serif JP",serif;color:var(--navy);font-size:34px;line-heigh
           <span class="badge">単発60分・3回コース</span>
         </div>
         <p class="preview-note">※個人レッスンLP ファーストビュー確認用</p>
+      </div>
+    </section>
+    <section class="problem">
+      <div class="section-inner">
+        <p class="section-label">WHAT HOLDS YOU BACK</p>
+        <h2 class="section-title">鑑定結果は出せる<br>でも、どう伝えればいいか分からない</h2>
+        <p class="lead">占術を学び、カードを読んだり、鑑定結果を導いたりすることはできる。<br>けれど、実際にお客様を前にすると、どんな言葉で伝えればよいのか迷ってしまう——。そんな占い師さんは、決して少なくありません。</p>
+
+        <div class="worry-list">
+          <p class="worry">悪い結果を、相手を傷つけずにどう伝えるのか</p>
+          <p class="worry">お客様の不安や感情を、どこまで受け止めればよいのか</p>
+          <p class="worry">聞かれたことに答えるだけでよいのか</p>
+          <p class="worry">どんな言葉を返せば、安心してもらえるのか</p>
+        </div>
+
+        <p class="key-message">同じ鑑定結果でも、<br>伝え方ひとつで、お客様の受け取り方は変わります</p>
+
+        <h2 class="sub-title">ほかにも、こんな悩みはありませんか？</h2>
+        <div class="issue-cards">
+          <article class="issue-card">
+            <h3>自分の課題や癖が分からない</h3>
+            <p>説明が長くなる、正論に寄りすぎる、共感がうまく伝わらない。自分の鑑定の癖は、一人ではなかなか気づけないものです。</p>
+          </article>
+          <article class="issue-card">
+            <h3>実践し、見てもらう機会がない</h3>
+            <p>占術を学べる場所はあっても、実際の相談を想定して鑑定し、その場でフィードバックを受けられる機会は多くありません。</p>
+          </article>
+        </div>
+
+        <div class="difference">
+          <p class="section-label">REAL-WORLD PRACTICE</p>
+          <h2 class="sub-title">実際の相談現場を知っているからできる<br>実践的なレッスン</h2>
+          <p class="difference-intro">YURIは、複数の大手占いプラットフォームに関わるなかで、さまざまな相談事例や、お客様が占い師に求めることを見てきました。その経験をもとに、実際の鑑定で起こり得る相談や反応を想定したケースをご用意します。</p>
+          <div class="difference-points">
+            <p class="difference-point">お客様が本当に知りたいことは何か</p>
+            <p class="difference-point">不安や感情をどう受け止めるか</p>
+            <p class="difference-point">鑑定結果をどのような言葉で伝えるか</p>
+            <p class="difference-point">安心や信頼につながる対応とは何か</p>
+          </div>
+          <p class="difference-intro">電話・チャット・対面など、ご希望の鑑定スタイルに合わせて実践し、伝え方や相談の受け止め方を具体的にフィードバックします。</p>
+          <p class="difference-close">占術を使う練習だけではなく、<br>実際のお客様と向き合うための実践を</p>
+        </div>
       </div>
     </section>
   </main>
