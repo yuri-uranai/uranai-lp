@@ -65,6 +65,18 @@ h1{font-family:"Noto Serif JP",serif;color:var(--navy);font-size:34px;line-heigh
 .benefit-card h3{color:var(--navy);font-family:"Noto Serif JP",serif;font-size:19px;line-height:1.65;margin-bottom:10px}
 .benefit-card p{color:#506775;font-size:14px;line-height:2}
 .benefit-close{max-width:700px;margin:0 auto;padding:23px 20px;text-align:center;border-top:1px solid rgba(169,119,30,.5);border-bottom:1px solid rgba(169,119,30,.5);color:var(--navy);font-family:"Noto Serif JP",serif;font-size:21px;line-height:1.85;font-weight:700}
+.lesson-flow{padding:82px 48px 90px;background:linear-gradient(180deg,#edf8fc 0%,#f8fcfd 100%)}
+.flow-intro{max-width:680px;margin:0 auto 38px;text-align:center;color:var(--ink);font-family:"Noto Serif JP",serif;font-size:16px;line-height:2.05}
+.flow-list{position:relative;max-width:780px;margin:0 auto;display:grid;gap:15px}
+.flow-list:before{content:"";position:absolute;left:33px;top:45px;bottom:45px;width:1px;background:linear-gradient(180deg,rgba(169,119,30,.55),rgba(169,119,30,.18))}
+.flow-card{position:relative;display:grid;grid-template-columns:68px 1fr;align-items:start;padding:25px 29px 25px 0;background:rgba(255,255,255,.94);border:1px solid rgba(169,119,30,.22);border-radius:3px 20px 3px 20px;box-shadow:0 8px 22px rgba(31,73,100,.055)}
+.flow-number{position:relative;z-index:1;display:flex;align-items:center;justify-content:center;width:38px;height:38px;margin:0 auto;background:var(--navy);border:1px solid rgba(215,183,101,.8);border-radius:50%;color:#fff;font-family:"Noto Serif JP",serif;font-size:11px;font-weight:700;letter-spacing:.08em;box-shadow:0 0 0 6px #f7fbfc}
+.flow-copy h3{color:var(--navy);font-family:"Noto Serif JP",serif;font-size:19px;line-height:1.65;margin:2px 0 8px}
+.flow-copy p{color:#506775;font-size:14px;line-height:2}
+.flow-examples{margin-top:13px;padding:14px 17px;background:#f4fafc;border-left:2px solid rgba(169,119,30,.55);color:#425d6e;font-family:"Noto Serif JP",serif;font-size:13px;line-height:1.9}
+.flow-examples span{display:block;position:relative;padding-left:17px}
+.flow-examples span:before{content:"◇";position:absolute;left:0;color:#b98529;font-size:10px}
+.flow-note{display:inline-block;margin-bottom:7px;color:#a9771e;font-family:"Noto Serif JP",serif;font-size:10.5px;font-weight:600;letter-spacing:.12em}
 @media(max-width:760px){
  .topbar{height:48px;padding:0 16px}.brand{font-size:10px}.top-label{font-size:8px}
  .hero{padding:28px 17px 39px}
@@ -103,6 +115,18 @@ h1{font-family:"Noto Serif JP",serif;color:var(--navy);font-size:34px;line-heigh
  .benefit-number{font-size:10.5px;margin-bottom:8px}
  .benefit-card h3{font-size:17px;margin-bottom:7px}.benefit-card p{font-size:13px;line-height:1.9}
  .benefit-close{padding:19px 4px;font-size:18px;line-height:1.8}
+ .lesson-flow{padding:58px 18px 66px}
+ .flow-intro{text-align:left;font-size:14px;line-height:2;margin-bottom:28px}
+ .flow-list{gap:11px}
+ .flow-list:before{left:25px;top:38px;bottom:38px}
+ .flow-card{grid-template-columns:50px 1fr;padding:21px 17px 21px 0;border-radius:3px 17px 3px 17px}
+ .flow-number{width:31px;height:31px;font-size:9.5px;box-shadow:0 0 0 5px #f7fbfc}
+ .flow-copy h3{font-size:16px;line-height:1.65;margin:0 0 7px}
+ .flow-copy p{font-size:13px;line-height:1.9}
+ .flow-examples{margin-top:11px;padding:12px 12px;font-size:12px;line-height:1.85}
+ .flow-examples span+span{margin-top:7px}
+ .flow-note{font-size:9px;margin-bottom:6px}
+
 }
 </style>
 </head>
@@ -200,6 +224,60 @@ h1{font-family:"Noto Serif JP",serif;color:var(--navy);font-size:34px;line-heigh
         </div>
 
         <p class="benefit-close"><span class="title-line">新しい占術を増やすのではなく</span><span class="title-line">今ある力を、仕事で活かせる鑑定力へ</span></p>
+      </div>
+    </section>
+    <section class="lesson-flow">
+      <div class="section-inner">
+        <p class="section-label">HOW IT WORKS</p>
+        <h2 class="section-title">レッスンの進め方</h2>
+        <p class="flow-intro">事前に課題やご希望を伺い、一人ひとりに合わせた内容でレッスンを行います。</p>
+
+        <div class="flow-list">
+          <article class="flow-card">
+            <span class="flow-number">01</span>
+            <div class="flow-copy">
+              <span class="flow-note">BEFORE THE LESSON</span>
+              <h3>事前アンケート</h3>
+              <p>現在の活動状況や、鑑定に関して感じているお悩み、希望する鑑定スタイル、レッスンで取り組みたいことを事前に伺います。</p>
+              <div class="flow-examples">
+                <span>「チャット鑑定に挑戦してみたいけれど、どのように返せばよいか分からない」</span>
+                <span>「所属して活動しているものの、お客様に選ばれる鑑定の進め方を学ぶ機会がない」</span>
+              </div>
+            </div>
+          </article>
+
+          <article class="flow-card">
+            <span class="flow-number">02</span>
+            <div class="flow-copy">
+              <h3>当日のヒアリングと方向性の整理</h3>
+              <p>アンケートをもとに詳しくお話を伺い、その日のレッスンで重点的に取り組むテーマを整理します。</p>
+            </div>
+          </article>
+
+          <article class="flow-card">
+            <span class="flow-number">03</span>
+            <div class="flow-copy">
+              <h3>相談ケースを使った実践</h3>
+              <p>課題や希望する鑑定スタイルに合わせて、実際の鑑定現場で起こり得る、臨場感のある相談ケースをご用意します。相談者を前にしているつもりで、実践形式の鑑定を行います。</p>
+            </div>
+          </article>
+
+          <article class="flow-card">
+            <span class="flow-number">04</span>
+            <div class="flow-copy">
+              <h3>その場で具体的にフィードバック</h3>
+              <p>実践後すぐに、相談者の本音の捉え方、言葉の選び方や伝える順番、相談者への寄り添い方、共感をどう言葉にするかなどを具体的にフィードバックします。良かった点だけでなく、「どこを、どのように変えるとよいか」までお伝えします。</p>
+            </div>
+          </article>
+
+          <article class="flow-card">
+            <span class="flow-number">05</span>
+            <div class="flow-copy">
+              <h3>強みと今後の改善点を整理</h3>
+              <p>実践を通して見えた強みと改善点を整理し、今後の鑑定で意識するポイントを明確にします。レッスンでの気づきを、次の鑑定から実践できる形に整えます。</p>
+            </div>
+          </article>
+        </div>
       </div>
     </section>
   </main>
