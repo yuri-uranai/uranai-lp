@@ -77,6 +77,23 @@ h1{font-family:"Noto Serif JP",serif;color:var(--navy);font-size:34px;line-heigh
 .flow-examples span{display:block;position:relative;padding-left:17px}
 .flow-examples span:before{content:"◇";position:absolute;left:0;color:#b98529;font-size:10px}
 .flow-note{display:inline-block;margin-bottom:7px;color:#a9771e;font-family:"Noto Serif JP",serif;font-size:10.5px;font-weight:600;letter-spacing:.12em}
+.lesson-menu{padding:82px 48px 92px;background:#fff}
+.menu-intro{max-width:680px;margin:0 auto 38px;text-align:center;color:var(--ink);font-family:"Noto Serif JP",serif;font-size:16px;line-height:2.05}
+.menu-grid{display:grid;grid-template-columns:1fr 1fr;gap:20px;max-width:900px;margin:0 auto}
+.menu-card{position:relative;display:flex;flex-direction:column;padding:35px 31px 32px;background:linear-gradient(145deg,#fff 0%,#f6fbfd 100%);border:1px solid rgba(169,119,30,.28);border-radius:4px 25px 4px 25px;box-shadow:0 10px 28px rgba(31,73,100,.065)}
+.menu-card.course{background:linear-gradient(145deg,#fdfefe 0%,#eaf7fb 100%);border-color:rgba(169,119,30,.42)}
+.menu-type{display:block;margin-bottom:8px;color:#a9771e;font-family:"Noto Serif JP",serif;font-size:11px;font-weight:600;letter-spacing:.14em}
+.menu-card h3{color:var(--navy);font-family:"Noto Serif JP",serif;font-size:23px;line-height:1.6;margin-bottom:12px}
+.menu-price{margin-bottom:20px;padding-bottom:18px;border-bottom:1px solid rgba(169,119,30,.25);color:var(--navy);font-family:"Noto Serif JP",serif;font-size:16px;line-height:1.4}
+.menu-price strong{font-size:31px;font-weight:700;letter-spacing:.015em}
+.menu-price small{font-size:12px}
+.menu-saving{display:inline-block;align-self:flex-start;margin:-7px 0 18px;padding:6px 11px;background:#fff7e4;border:1px solid rgba(169,119,30,.28);border-radius:20px;color:#916817;font-size:11.5px;font-weight:500}
+.menu-description{color:#506775;font-size:14px;line-height:2}
+.menu-points{margin-top:20px;display:grid;gap:9px}
+.menu-point{position:relative;padding-left:22px;color:var(--navy);font-family:"Noto Serif JP",serif;font-size:13.5px;line-height:1.75}
+.menu-point:before{content:"◇";position:absolute;left:1px;color:#b98529}
+.menu-recommend{margin-top:auto;padding-top:23px;color:#425d6e;font-family:"Noto Serif JP",serif;font-size:13px;line-height:1.9}
+.menu-recommend strong{display:block;margin-bottom:5px;color:var(--navy);font-size:13.5px}
 @media(max-width:760px){
  .topbar{height:48px;padding:0 16px}.brand{font-size:10px}.top-label{font-size:8px}
  .hero{padding:28px 17px 39px}
@@ -126,6 +143,22 @@ h1{font-family:"Noto Serif JP",serif;color:var(--navy);font-size:34px;line-heigh
  .flow-examples{margin-top:11px;padding:12px 12px;font-size:12px;line-height:1.85}
  .flow-examples span+span{margin-top:7px}
  .flow-note{font-size:9px;margin-bottom:6px}
+
+ .lesson-menu{padding:58px 18px 68px}
+ .menu-intro{text-align:left;font-size:14px;line-height:2;margin-bottom:28px}
+ .menu-grid{grid-template-columns:1fr;gap:14px}
+ .menu-card{padding:27px 21px 25px;border-radius:3px 19px 3px 19px}
+ .menu-type{font-size:9.5px;margin-bottom:6px}
+ .menu-card h3{font-size:20px;margin-bottom:9px}
+ .menu-price{font-size:14px;margin-bottom:17px;padding-bottom:15px}
+ .menu-price strong{font-size:27px}
+ .menu-price small{font-size:11px}
+ .menu-saving{margin:-5px 0 15px;font-size:10.5px}
+ .menu-description{font-size:13px;line-height:1.9}
+ .menu-points{margin-top:17px;gap:7px}
+ .menu-point{font-size:12.5px;line-height:1.75;padding-left:20px}
+ .menu-recommend{padding-top:19px;font-size:12.5px;line-height:1.85}
+ .menu-recommend strong{font-size:13px}
 
 }
 </style>
@@ -276,6 +309,42 @@ h1{font-family:"Noto Serif JP",serif;color:var(--navy);font-size:34px;line-heigh
               <h3>強みと今後の改善点を整理</h3>
               <p>実践を通して見えた強みと改善点を整理し、今後の鑑定で意識するポイントを明確にします。レッスンでの気づきを、次の鑑定から実践できる形に整えます。</p>
             </div>
+          </article>
+        </div>
+      </div>
+    </section>
+    <section class="lesson-menu">
+      <div class="section-inner">
+        <p class="section-label">LESSON MENU</p>
+        <h2 class="section-title">レッスンメニュー</h2>
+        <p class="menu-intro">現在の課題や、身につけたい力に合わせてお選びいただけます。</p>
+
+        <div class="menu-grid">
+          <article class="menu-card">
+            <span class="menu-type">SINGLE LESSON</span>
+            <h3>単発レッスン</h3>
+            <p class="menu-price">60分｜<strong>10,000円</strong> <small>（税込）</small></p>
+            <p class="menu-description">一つの相談ケースを使った実践とフィードバックを通して、現在の鑑定の強みや、自分では気づきにくい癖・改善点を明確にします。</p>
+            <div class="menu-points">
+              <p class="menu-point">相談ケースを使った実践演習</p>
+              <p class="menu-point">その場で具体的にフィードバック</p>
+              <p class="menu-point">強みと今後の改善点を整理</p>
+            </div>
+            <p class="menu-recommend"><strong>こんな方におすすめ</strong>「まずは一度、自分の鑑定を見てもらいたい」<br>「今感じている課題を、ピンポイントで相談したい」</p>
+          </article>
+
+          <article class="menu-card course">
+            <span class="menu-type">3 LESSON COURSE</span>
+            <h3>3回コース</h3>
+            <p class="menu-price">60分×3回｜<strong>25,000円</strong> <small>（税込）</small></p>
+            <span class="menu-saving">単発で3回受講するより5,000円お得</span>
+            <p class="menu-description">毎回異なる相談ケースで実践し、前回のフィードバックを次のレッスンに活かしながら、段階的に鑑定力を磨きます。</p>
+            <div class="menu-points">
+              <p class="menu-point">各回で実践演習を1回実施</p>
+              <p class="menu-point">前回の気づきを次の実践で試せる</p>
+              <p class="menu-point">自分らしい鑑定の進め方として定着</p>
+            </div>
+            <p class="menu-recommend"><strong>こんな方におすすめ</strong>「繰り返し実践しながら、苦手な部分を改善したい」<br>「寄り添い方や伝え方を、自信を持って使えるようになりたい」</p>
           </article>
         </div>
       </div>
