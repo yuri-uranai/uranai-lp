@@ -107,6 +107,11 @@ h1{font-family:"Noto Serif JP",serif;color:var(--navy);font-size:34px;line-heigh
 .achievement-list{list-style:none;display:grid;gap:9px}
 .achievement-list li{position:relative;padding:10px 12px 10px 31px;background:rgba(255,255,255,.72);border:1px solid rgba(169,119,30,.18);color:#425d6e;font-size:13px;line-height:1.7}
 .achievement-list li:before{content:"◇";position:absolute;left:11px;top:10px;color:#b98529}
+.format-grid{grid-template-columns:repeat(3,1fr);margin-bottom:28px}
+.issue-list{list-style:none;display:grid;gap:10px}
+.issue-list li{position:relative;padding-left:20px;color:#506775;font-size:13px;line-height:1.85}
+.issue-list li:before{content:"◇";position:absolute;left:0;color:#b98529;font-size:10px}
+.format-close{max-width:760px;margin:0 auto 62px;padding:22px 26px;text-align:center;background:rgba(255,255,255,.76);border-top:1px solid rgba(169,119,30,.42);border-bottom:1px solid rgba(169,119,30,.42);color:var(--navy);font-family:"Noto Serif JP",serif;font-size:15px;line-height:2}
 @media(max-width:760px){
  .topbar{height:48px;padding:0 16px}.brand{font-size:10px}.top-label{font-size:8px}
  .hero{padding:28px 17px 39px}
@@ -187,6 +192,11 @@ h1{font-family:"Noto Serif JP",serif;color:var(--navy);font-size:34px;line-heigh
  .achievement-list li{font-size:12.5px;padding:9px 10px 9px 29px}
  .achievement-list li:before{left:10px;top:9px}
 
+ .format-grid{grid-template-columns:1fr;gap:11px;margin-bottom:20px}
+ .issue-list{gap:8px}
+ .issue-list li{font-size:12.5px;line-height:1.8}
+ .format-close{margin-bottom:47px;padding:18px 9px;text-align:left;font-size:13px;line-height:1.95}
+
 }
 </style>
 </head>
@@ -215,29 +225,46 @@ h1{font-family:"Noto Serif JP",serif;color:var(--navy);font-size:34px;line-heigh
     <section class="problem">
       <div class="section-inner">
         <p class="section-label">WHAT HOLDS YOU BACK</p>
-        <h2 class="section-title"><span class="title-line">鑑定結果は出せる</span><span class="title-line">でも、伝え方に迷ってしまう</span></h2>
-        <p class="lead">占術を学び、カードを読んだり、鑑定結果を導いたりすることはできる。<br>けれど、実際に相談者を前にすると、どんな言葉で伝えればよいのか迷ってしまう——。そんな占い師さんは、決して少なくありません。</p>
+        <h2 class="section-title"><span class="title-line">鑑定結果は出せる</span><span class="title-line">でも、チャットでどう返せばいいか分からない</span></h2>
+        <p class="lead">占術を学び、カードを読んだり、鑑定結果を導いたりすることはできる。<br>けれど、実際に相談メッセージが届くと、何から伝えればよいのか、どんな言葉で返せばよいのか迷ってしまう——。<br><br>顔も声も見えないチャット鑑定では、文字だけで相談者の気持ちを受け止め、安心して話せる関係をつくる必要があります。</p>
 
         <div class="worry-list">
-          <p class="worry">悪い結果を、相手を傷つけずにどう伝えるのか</p>
-          <p class="worry">相談者の不安や感情を、どこまで受け止めればよいのか</p>
-          <p class="worry">聞かれたことに答えるだけでよいのか</p>
-          <p class="worry">どんな言葉を返せば、安心してもらえるのか</p>
+          <p class="worry">相談メッセージに、最初に何と返せばよいのか</p>
+          <p class="worry">共感や寄り添いを、文字でどう伝えればよいのか</p>
+          <p class="worry">悪い鑑定結果を、相談者を傷つけずにどう伝えるのか</p>
+          <p class="worry">聞かれたことに答えるだけでよいのか、どこまで話を広げるのか</p>
         </div>
 
-        <p class="key-message"><span class="title-line">同じ鑑定結果でも</span><span class="title-line">伝え方ひとつで</span><span class="title-line">受け取られ方は変わります</span></p>
+        <p class="key-message"><span class="title-line">同じ鑑定結果でも</span><span class="title-line">言葉の選び方と伝える順番で</span><span class="title-line">受け取られ方は変わります</span></p>
 
-        <h2 class="sub-title"><span class="title-line">ほかにも、こんな悩みは</span><span class="title-line">ありませんか？</span></h2>
-        <div class="issue-cards">
+        <h2 class="sub-title"><span class="title-line">チャット鑑定は</span><span class="title-line">形式によって難しさが違います</span></h2>
+        <div class="issue-cards format-grid">
           <article class="issue-card">
-            <h3>自分の課題や癖が分からない</h3>
-            <p>説明が長くなる、正論に寄りすぎる、共感がうまく伝わらない。自分の鑑定の癖は、一人ではなかなか気づけないものです。</p>
+            <h3>文字数課金制のお悩み</h3>
+            <ul class="issue-list">
+              <li>相談者の手持ちポイントが少なく、十分なやり取りができない</li>
+              <li>短いメッセージで届くため、状況や本音をくみ取りにくい</li>
+              <li>限られた文字数のなかで、何を優先して伝えればよいか分からない</li>
+            </ul>
           </article>
           <article class="issue-card">
-            <h3>実践し、見てもらう機会がない</h3>
-            <p>占術を学べる場所はあっても、実際の相談を想定して鑑定し、その場でフィードバックを受けられる機会は多くありません。</p>
+            <h3>時間制のお悩み</h3>
+            <ul class="issue-list">
+              <li>時間を意識するあまり、焦ってしまう</li>
+              <li>相談者との会話をどう広げればよいか分からず、鑑定が長く続かない</li>
+              <li>長文の相談が一度に届くと、読み解きながら返すことが難しい</li>
+            </ul>
+          </article>
+          <article class="issue-card">
+            <h3>これから始める方のお悩み</h3>
+            <ul class="issue-list">
+              <li>文字数課金制と時間制の違いがよく分からない</li>
+              <li>どのようなチャット占いサイトがあるのか分からない</li>
+              <li>自分には、どの形式や活動先が合っているのか分からない</li>
+            </ul>
           </article>
         </div>
+        <p class="format-close">チャット鑑定は、形式によって求められる対応が異なります。<br>だからこそ、自分に合う活動スタイルを知り、その形式に合わせた鑑定の進め方を身につけることが大切です。</p>
 
         <div class="difference">
           <p class="section-label">REAL-WORLD PRACTICE</p>
